@@ -4,6 +4,8 @@
 
 This module helps Cirrus CI to parse artifacts and find relative annotations to report in GitHub UI.
 
+![](images/screenshot.png)
+
 # Supported Formats
 
 * [junit](https://github.com/cirruslabs/cirrus-ci-annotations/tree/master/junit)
