@@ -1,6 +1,9 @@
 container:
   image: golang:latest
 
+env:
+  GOPROXY: https://gocenter.io
+
 test_task:
   modules_cache:
     fingerprint_script: cat go.sum
