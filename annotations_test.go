@@ -7,8 +7,8 @@ import (
 	"testing"
 )
 
-func Test_DefaultValue(t *testing.T) {
-	err, annotations := ParseAnnotations("junit", filepath.Join("testdata", "junit", "TEST-LibraryTest.xml"))
+func Test_JunitJava(t *testing.T) {
+	err, annotations := ParseAnnotations("junit", filepath.Join("testdata", "junit", "JunitJava.xml"))
 	if err != nil {
 		t.Errorf("Errored: %v", err)
 	}
