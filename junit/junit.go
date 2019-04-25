@@ -40,6 +40,7 @@ func ParseJUnitAnnotations(path string) (error, []model.Annotation) {
 							test.Error.Error(),
 							[]string{
 								"junit",
+								"kotlin",
 							},
 						),
 					},

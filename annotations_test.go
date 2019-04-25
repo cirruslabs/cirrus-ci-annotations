@@ -34,3 +34,31 @@ func Test_JunitJava(t *testing.T) {
 		t.Error(diff)
 	}
 }
+
+func Test_JunitKotlin(t *testing.T) {
+	err, annotations := ParseAnnotations("junit", filepath.Join("testdata", "junit", "JunitKotlin.xml"))
+	if err != nil {
+		t.Errorf("Errored: %v", err)
+	}
+	if len(annotations) != 1 {
+		t.Errorf("Wrong amount of annotations: %v", len(annotations))
+	}
+	annotation := annotations[0]
+	annotation.RawDetails = ""
+	expected := model.Annotation{
+		Type:               model.TestResultAnnotationType,
+		Level:              "failure",
+		Message:            "com.fkorotkov.kubernetes.SimpleCompilationTest.testService",
+		FullyQualifiedName: "com.fkorotkov.kubernetes.SimpleCompilationTest.testService",
+		RawDetails:         "",
+		Location: &model.FileLocation{
+			Path:      "SimpleCompilationTest.kt",
+			StartLine: 41,
+			EndLine:   41,
+		},
+	}
+
+	if diff := deep.Equal(expected, annotation); diff != nil {
+		t.Error(diff)
+	}
+}
