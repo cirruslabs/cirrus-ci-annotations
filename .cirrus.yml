@@ -12,7 +12,9 @@ test_task:
     - go get ./...
     - go get -u github.com/jstemmer/go-junit-report
   build_script: go build ./...
-  test_script: go test -v 2>&1 | go-junit-report > reports/report.xml
+  test_script:
+    - mkdir -p reports
+    - go test -v 2>&1 | go-junit-report > reports/report.xml
   always:
     junit_result_artifacts:
       path: "reports/report.xml"
