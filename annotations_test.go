@@ -90,3 +90,31 @@ func Test_PythonXMLRunner(t *testing.T) {
 		t.Error(diff)
 	}
 }
+
+func Test_GoJUnitReport(t *testing.T) {
+	err, annotations := ParseAnnotations("junit", filepath.Join("testdata", "junit", "GoJUnitReport.xml"))
+	if err != nil {
+		t.Errorf("Errored: %v", err)
+	}
+	if len(annotations) != 1 {
+		t.Errorf("Wrong amount of annotations: %v", len(annotations))
+	}
+	annotation := annotations[0]
+	annotation.RawDetails = ""
+	expected := model.Annotation{
+		Type:               model.TestResultAnnotationType,
+		Level:              "failure",
+		Message:            "cirrus-ci-annotations.Test_PythonXMLRunner",
+		FullyQualifiedName: "cirrus-ci-annotations.Test_PythonXMLRunner",
+		RawDetails:         "",
+		Location: &model.FileLocation{
+			Path:      "annotations_test.go",
+			StartLine: 90,
+			EndLine:   90,
+		},
+	}
+
+	if diff := deep.Equal(expected, annotation); diff != nil {
+		t.Error(diff)
+	}
+}

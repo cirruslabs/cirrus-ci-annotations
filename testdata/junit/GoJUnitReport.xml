@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite tests="3" failures="1" time="0.004" name="github.com/cirruslabs/cirrus-ci-annotations">
+		<properties>
+			<property name="go.version" value="go1.12.4"></property>
+		</properties>
+		<testcase classname="cirrus-ci-annotations" name="Test_PythonXMLRunner" time="0.000">
+			<failure message="Failed" type="">annotations_test.go:90: [Location.EndLine: 71 != 70]</failure>
+		</testcase>
+	</testsuite>
+</testsuites>
