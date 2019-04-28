@@ -5,6 +5,7 @@ import (
 	"github.com/cirruslabs/cirrus-ci-annotations/model"
 	"github.com/cirruslabs/cirrus-ci-annotations/util"
 	"github.com/joshdk/go-junit"
+	"strconv"
 )
 
 func ParseJUnitAnnotations(path string) (error, []model.Annotation) {
@@ -16,36 +17,45 @@ func ParseJUnitAnnotations(path string) (error, []model.Annotation) {
 	for _, suite := range suites {
 		for _, test := range suite.Tests {
 			fqn := fmt.Sprintf("%s.%s", test.Classname, test.Name)
+			var parsedAnnotation model.Annotation
 			switch test.Status {
 			case junit.StatusPassed:
-				result = append(
-					result,
-					model.Annotation{
-						Type:               model.TestResultAnnotationType,
-						Level:              "notice",
-						Message:            fqn,
-						FullyQualifiedName: fqn,
-					},
-				)
+				parsedAnnotation = model.Annotation{
+					Type:               model.TestResultAnnotationType,
+					Level:              "notice",
+					Message:            fqn,
+					FullyQualifiedName: fqn,
+				}
 			case junit.StatusFailed:
-				result = append(
-					result,
-					model.Annotation{
-						Type:               model.TestResultAnnotationType,
-						Level:              "failure",
-						Message:            fqn,
-						FullyQualifiedName: fqn,
-						RawDetails:         test.Error.Error(),
-						Location: util.GuessLocationIgnored(
-							test.Error.Error(),
-							[]string{
-								"junit",
-								"kotlin",
-							},
-						),
-					},
-				)
+				parsedAnnotation = model.Annotation{
+					Type:               model.TestResultAnnotationType,
+					Level:              "failure",
+					Message:            fqn,
+					FullyQualifiedName: fqn,
+					RawDetails:         test.Error.Error(),
+					Location: util.GuessLocationIgnored(
+						test.Error.Error(),
+						[]string{
+							"junit",
+							"kotlin",
+						},
+					),
+				}
 			}
+
+			if test.Properties["file"] != "" {
+				line, _ := strconv.Atoi(test.Properties["line"])
+				parsedAnnotation.Location = &model.FileLocation{
+					Path:      test.Properties["file"],
+					StartLine: int64(line),
+					EndLine:   int64(line),
+				}
+			}
+
+			result = append(
+				result,
+				parsedAnnotation,
+			)
 		}
 	}
 	return nil, result

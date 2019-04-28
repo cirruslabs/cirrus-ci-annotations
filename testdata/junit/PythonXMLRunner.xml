@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="1" file="tests.py" name="tests.Tests-20190425175206" skipped="0" tests="1" time="1.259" timestamp="2019-04-25T17:52:08">
+	<testcase classname="tests.Tests" file="tests.py" line="70" name="test_utilities" time="0.003" timestamp="2019-04-25T17:52:08">
+		<failure message="'¯' != '¯\\_(ツ)_/¯'
+- ¯
++ ¯\_(ツ)_/¯
+" type="AssertionError">
+<![CDATA[Traceback (most recent call last):
+  File "/tmp/cirrus-ci-build/tests.py", line 83, in test_utilities
+    self.assertEqual(module.get_divider_character(21), "¯\\_(ツ)_/¯")
+AssertionError: '¯' != '¯\\_(ツ)_/¯'
+- ¯
++ ¯\_(ツ)_/¯
+
+]]>		</failure>
+		<system-out>
+<![CDATA[]]>		</system-out>
+		<system-err>
+<![CDATA[]]>		</system-err>
+	</testcase>
+</testsuite>

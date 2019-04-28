@@ -62,3 +62,31 @@ func Test_JunitKotlin(t *testing.T) {
 		t.Error(diff)
 	}
 }
+
+func Test_PythonXMLRunner(t *testing.T) {
+	err, annotations := ParseAnnotations("junit", filepath.Join("testdata", "junit", "PythonXMLRunner.xml"))
+	if err != nil {
+		t.Errorf("Errored: %v", err)
+	}
+	if len(annotations) != 1 {
+		t.Errorf("Wrong amount of annotations: %v", len(annotations))
+	}
+	annotation := annotations[0]
+	annotation.RawDetails = ""
+	expected := model.Annotation{
+		Type:               model.TestResultAnnotationType,
+		Level:              "failure",
+		Message:            "tests.Tests.test_utilities",
+		FullyQualifiedName: "tests.Tests.test_utilities",
+		RawDetails:         "",
+		Location: &model.FileLocation{
+			Path:      "tests.py",
+			StartLine: 70,
+			EndLine:   70,
+		},
+	}
+
+	if diff := deep.Equal(expected, annotation); diff != nil {
+		t.Error(diff)
+	}
+}
