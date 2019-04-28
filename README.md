@@ -9,7 +9,7 @@ This module helps Cirrus CI to parse artifacts and find relative annotations to 
 # Supported Formats
 
 * [junit](https://github.com/cirruslabs/cirrus-ci-annotations/tree/master/junit)
-* Crete an [issue](https://github.com/cirruslabs/cirrus-ci-annotations/issues/new) to request support for other formats.
+* Create an [issue](https://github.com/cirruslabs/cirrus-ci-annotations/issues/new) to request support for other formats.
 
 # Contribution
 
