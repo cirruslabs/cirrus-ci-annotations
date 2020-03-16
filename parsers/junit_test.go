@@ -1,4 +1,4 @@
-package annotations
+package parsers
 
 import (
 	"github.com/cirruslabs/cirrus-ci-annotations/model"
@@ -8,7 +8,7 @@ import (
 )
 
 func Test_JunitJava(t *testing.T) {
-	err, annotations := ParseAnnotations("junit", filepath.Join("testdata", "junit", "JunitJava.xml"))
+	err, annotations := ParseJUnitAnnotations(filepath.Join("..", "testdata", "junit", "JunitJava.xml"))
 	if err != nil {
 		t.Errorf("Errored: %v", err)
 	}
@@ -36,7 +36,7 @@ func Test_JunitJava(t *testing.T) {
 }
 
 func Test_JunitKotlin(t *testing.T) {
-	err, annotations := ParseAnnotations("junit", filepath.Join("testdata", "junit", "JunitKotlin.xml"))
+	err, annotations := ParseJUnitAnnotations(filepath.Join("..", "testdata", "junit", "JunitKotlin.xml"))
 	if err != nil {
 		t.Errorf("Errored: %v", err)
 	}
@@ -64,7 +64,7 @@ func Test_JunitKotlin(t *testing.T) {
 }
 
 func Test_PythonXMLRunner(t *testing.T) {
-	err, annotations := ParseAnnotations("junit", filepath.Join("testdata", "junit", "PythonXMLRunner.xml"))
+	err, annotations := ParseJUnitAnnotations(filepath.Join("..", "testdata", "junit", "PythonXMLRunner.xml"))
 	if err != nil {
 		t.Errorf("Errored: %v", err)
 	}
