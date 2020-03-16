@@ -1,8 +1,8 @@
 package annotations
 
 import (
-	"github.com/cirruslabs/cirrus-ci-annotations/junit"
 	"github.com/cirruslabs/cirrus-ci-annotations/model"
+	"github.com/cirruslabs/cirrus-ci-annotations/parsers"
 	"os"
 	"path/filepath"
 )
@@ -10,7 +10,7 @@ import (
 func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 	switch format {
 	case "junit":
-		return junit.ParseJUnitAnnotations(path)
+		return parsers.ParseJUnitAnnotations(path)
 	default:
 		return nil, make([]model.Annotation, 0)
 	}
