@@ -1,10 +1,8 @@
-container:
-  image: golang:latest
-
-env:
-  GOPROXY: https://proxy.golang.org
-
-test_task:
+Tests_task:
+  container:
+    image: golang:latest
+  env:
+    GOPROXY: https://proxy.golang.org
   modules_cache:
     fingerprint_script: cat go.sum
     folder: $GOPATH/pkg/mod
@@ -19,3 +17,13 @@ test_task:
     junit_result_artifacts:
       path: "reports/report.xml"
       format: junit
+
+Lint_task:
+  container:
+    image: golangci/golangci-lint:latest
+  script: golangci-lint run -v --out-format json > lint-report.json
+  always:
+    golangci_artifacts:
+      path: "lint-report.json"
+      type: text/json
+      format: golangci
