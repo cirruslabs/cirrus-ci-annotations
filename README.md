@@ -8,7 +8,8 @@ This module helps Cirrus CI to parse artifacts and find relative annotations to 
 
 # Supported Formats
 
-* [junit](https://github.com/cirruslabs/cirrus-ci-annotations/tree/master/junit)
+* JUnit's XML
+* GolangCI's JSON
 * Create an [issue](https://github.com/cirruslabs/cirrus-ci-annotations/issues/new) to request support for other formats.
 
 # Contribution
