@@ -1,0 +1,165 @@
+{
+  "Issues": [
+    {
+      "FromLinter": "gosimple",
+      "Text": "S1007: should use raw string (`...`) with regexp.Compile to avoid having to escape twice",
+      "SourceLines": [
+        "\tregex, err := regexp.Compile(\"([\\\\w\\\\.]+)\\\\:(\\\\d+)\")"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "util/location.go",
+        "Offset": 211,
+        "Line": 11,
+        "Column": 16
+      }
+    }
+  ],
+  "Report": {
+    "Linters": [
+      {
+        "Name": "govet",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "bodyclose"
+      },
+      {
+        "Name": "errcheck",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "golint"
+      },
+      {
+        "Name": "rowserrcheck"
+      },
+      {
+        "Name": "staticcheck",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "unused",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "gosimple",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "stylecheck"
+      },
+      {
+        "Name": "gosec"
+      },
+      {
+        "Name": "structcheck",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "varcheck",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "interfacer"
+      },
+      {
+        "Name": "unconvert"
+      },
+      {
+        "Name": "ineffassign",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "dupl"
+      },
+      {
+        "Name": "goconst"
+      },
+      {
+        "Name": "deadcode",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "gocyclo"
+      },
+      {
+        "Name": "gocognit"
+      },
+      {
+        "Name": "typecheck",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "gofmt"
+      },
+      {
+        "Name": "goimports"
+      },
+      {
+        "Name": "maligned"
+      },
+      {
+        "Name": "depguard"
+      },
+      {
+        "Name": "misspell"
+      },
+      {
+        "Name": "lll"
+      },
+      {
+        "Name": "unparam"
+      },
+      {
+        "Name": "dogsled"
+      },
+      {
+        "Name": "nakedret"
+      },
+      {
+        "Name": "prealloc"
+      },
+      {
+        "Name": "scopelint"
+      },
+      {
+        "Name": "gocritic"
+      },
+      {
+        "Name": "gochecknoinits"
+      },
+      {
+        "Name": "gochecknoglobals"
+      },
+      {
+        "Name": "godox"
+      },
+      {
+        "Name": "funlen"
+      },
+      {
+        "Name": "whitespace"
+      },
+      {
+        "Name": "wsl"
+      },
+      {
+        "Name": "goprintffuncname"
+      },
+      {
+        "Name": "gomnd"
+      }
+    ]
+  }
+}

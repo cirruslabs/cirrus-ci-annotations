@@ -5,12 +5,15 @@ import (
 	"github.com/cirruslabs/cirrus-ci-annotations/parsers"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 func ParseAnnotations(format string, path string) (error, []model.Annotation) {
-	switch format {
+	switch strings.ToLower(format) {
 	case "junit":
 		return parsers.ParseJUnitAnnotations(path)
+	case "golangci":
+		return parsers.ParseGoLangCIAnnotations(path)
 	default:
 		return nil, make([]model.Annotation, 0)
 	}

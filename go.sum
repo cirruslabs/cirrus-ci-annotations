@@ -8,6 +8,8 @@ github.com/joshdk/go-junit v0.0.0-20190428045703-ad7e11aa49ff h1:Bp5LAZasx/ev9wU
 github.com/joshdk/go-junit v0.0.0-20190428045703-ad7e11aa49ff/go.mod h1:MOeCCTRumOm/JuvRWzF18Jzf1a2UkhFRgISDS/VSszs=
 github.com/joshdk/go-junit v0.0.0-20191027203205-93e3ed9f3c4c h1:tKJutSyPCzIlDzDDlkU7a9We6vAQ1QxnCdprLH4Ybx0=
 github.com/joshdk/go-junit v0.0.0-20191027203205-93e3ed9f3c4c/go.mod h1:TiiV0PqkaNfFXjEiyjWM3XXrhVyCa1K4Zfga6W52ung=
+github.com/joshdk/go-junit v0.0.0-20200312181801-e5d93c0f31a8 h1:m2Pr6ORN6eh6z5lFi2eI9y9QEB6gPxkwpqv3DD1yYpg=
+github.com/joshdk/go-junit v0.0.0-20200312181801-e5d93c0f31a8/go.mod h1:TiiV0PqkaNfFXjEiyjWM3XXrhVyCa1K4Zfga6W52ung=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0 h1:4G4v2dO3VZwixGIRoQ5Lfboy6nUhCyYzaqnIAPPhYs4=
