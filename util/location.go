@@ -8,7 +8,7 @@ import (
 )
 
 func GuessLocationIgnored(data string, ignorePatters []string) *model.FileLocation {
-	regex, err := regexp.Compile(`([\\w\\.]+)\\:(\\d+)`)
+	regex, err := regexp.Compile(`([\w\\.]+):(\d+)`)
 	if err != nil {
 		return nil
 	}
