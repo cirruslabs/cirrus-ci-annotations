@@ -1,11 +1,12 @@
 package annotations
 
 import (
-	"github.com/cirruslabs/cirrus-ci-annotations/model"
-	"github.com/cirruslabs/cirrus-ci-annotations/parsers"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/cirruslabs/cirrus-ci-annotations/model"
+	"github.com/cirruslabs/cirrus-ci-annotations/parsers"
 )
 
 func ParseAnnotations(format string, path string) (error, []model.Annotation) {
@@ -14,6 +15,8 @@ func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 		return parsers.ParseJUnitAnnotations(path)
 	case "golangci":
 		return parsers.ParseGoLangCIAnnotations(path)
+	case "android-lint":
+		return parsers.ParseAndroidLintAnnotations(path)
 	default:
 		return nil, make([]model.Annotation, 0)
 	}
