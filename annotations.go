@@ -17,6 +17,8 @@ func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 		return parsers.ParseGoLangCIAnnotations(path)
 	case "android-lint":
 		return parsers.ParseAndroidLintAnnotations(path)
+	case "rspec":
+		return parsers.ParseRSpecAnnotations(path)
 	default:
 		return nil, make([]model.Annotation, 0)
 	}
