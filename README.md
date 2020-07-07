@@ -10,6 +10,7 @@ This module helps Cirrus CI to parse artifacts and find relative annotations to 
 
 * JUnit's XML
 * GolangCI's JSON
+* Android Lint
 * Create an [issue](https://github.com/cirruslabs/cirrus-ci-annotations/issues/new) to request support for other formats.
 
 # Contribution
