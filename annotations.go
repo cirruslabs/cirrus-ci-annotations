@@ -19,6 +19,8 @@ func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 		return parsers.ParseAndroidLintAnnotations(path)
 	case "rspec":
 		return parsers.ParseRSpecAnnotations(path)
+	case "rubocop":
+		return parsers.ParseRuboCopAnnotations(path)
 	default:
 		return nil, make([]model.Annotation, 0)
 	}
