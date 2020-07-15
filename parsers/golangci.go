@@ -2,6 +2,7 @@ package parsers
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/cirruslabs/cirrus-ci-annotations/model"
 	"io/ioutil"
 )
@@ -40,7 +41,7 @@ func ParseGoLangCIAnnotations(path string) (error, []model.Annotation) {
 			Type:               model.TestResultAnnotationType,
 			Level:              "failure",
 			FullyQualifiedName: issue.FromLinter,
-			Message:            issue.Text,
+			Message:            fmt.Sprintf("%s (%s)", issue.Text, issue.FromLinter),
 			Location: &model.FileLocation{
 				Path:        issue.Pos.Filename,
 				StartLine:   issue.Pos.Line,
