@@ -12,7 +12,7 @@ Tests_task:
   build_script: go build ./...
   test_script:
     - mkdir -p reports
-    - go test -v 2>&1 | go-junit-report > reports/report.xml
+    - go test -v ./... 2>&1 | go-junit-report > reports/report.xml
   always:
     junit_result_artifacts:
       path: "reports/report.xml"
