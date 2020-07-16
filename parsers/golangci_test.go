@@ -20,7 +20,7 @@ func Test_GoLangCI(t *testing.T) {
 	expected := model.Annotation{
 		Type:               model.TestResultAnnotationType,
 		Level:              "failure",
-		Message:            "S1007: should use raw string (`...`) with regexp.Compile to avoid having to escape twice",
+		Message:            "S1007: should use raw string (`...`) with regexp.Compile to avoid having to escape twice (gosimple)",
 		FullyQualifiedName: "gosimple",
 		RawDetails:         "",
 		Location: &model.FileLocation{
