@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"github.com/cirruslabs/cirrus-ci-annotations/model"
 	"io/ioutil"
+	"path/filepath"
 )
 
 type rspecException struct {
@@ -67,7 +68,7 @@ func ParseRSpecAnnotations(path string) (error, []model.Annotation) {
 			RawDetails:         rawDetails,
 			FullyQualifiedName: example.ID,
 			Location: &model.FileLocation{
-				Path:      example.FilePath,
+				Path:      filepath.Clean(example.FilePath),
 				StartLine: example.LineNumber,
 				EndLine:   example.LineNumber,
 			},

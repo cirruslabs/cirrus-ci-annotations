@@ -40,7 +40,7 @@ func Test_RSpec_MultipleStates(t *testing.T) {
 			RawDetails:         "not implemented yet",
 			FullyQualifiedName: "./spec/dummy_spec.rb[1:2]",
 			Location: &model.FileLocation{
-				Path:      "./spec/dummy_spec.rb",
+				Path:      "spec/dummy_spec.rb",
 				StartLine: 11,
 				EndLine:   11,
 			},
@@ -52,7 +52,7 @@ func Test_RSpec_MultipleStates(t *testing.T) {
 			RawDetails:         "\nexpected: 2\n     got: 1\n\n(compared using ==)\n",
 			FullyQualifiedName: "./spec/dummy_spec.rb[1:3]",
 			Location: &model.FileLocation{
-				Path:      "./spec/dummy_spec.rb",
+				Path:      "spec/dummy_spec.rb",
 				StartLine: 16,
 				EndLine:   16,
 			},
