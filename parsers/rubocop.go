@@ -27,6 +27,7 @@ type rubocopLocation struct {
 type rubocopOffense struct {
 	Severity  string
 	Message   string
+	CopName   string `json:"cop_name"`
 	Corrected bool
 	Location  rubocopLocation
 }
@@ -78,7 +79,7 @@ func ParseRuboCopAnnotations(path string) (error, []model.Annotation) {
 			var parsedAnnotation = model.Annotation{
 				Type:               model.LintResultAnnotationType,
 				Level:              level,
-				Message:            offense.Message,
+				Message:            fmt.Sprintf("%s: %s", offense.CopName, offense.Message),
 				FullyQualifiedName: fqn,
 				Location: &model.FileLocation{
 					Path:        file.Path,
