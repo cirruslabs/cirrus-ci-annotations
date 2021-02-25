@@ -11,15 +11,14 @@ import (
 func TestQodana(t *testing.T) {
 	expected := []model.Annotation{
 		{
-			model.GenericAnnotationType,
-			"failure",
-			"Cannot resolve symbol 'ComponentSelection' ", `<html>
+			Level: "failure",
+			Message: "Cannot resolve symbol 'ComponentSelection' ",
+			RawDetails: `<html>
 <body>
 Allows you to see problems reported by language annotators in the results of batch code inspection.
 </body>
 </html>`,
-			"",
-			&model.FileLocation{
+			Location: &model.FileLocation{
 				Path:        "build.gradle",
 				StartLine:   37,
 				EndLine:     37,
@@ -28,16 +27,14 @@ Allows you to see problems reported by language annotators in the results of bat
 			},
 		},
 		{
-			model.GenericAnnotationType,
-			"failure",
-			"Cannot resolve symbol 'FileType' ",
-			`<html>
+			Level: "failure",
+			Message: "Cannot resolve symbol 'FileType' ",
+			RawDetails: `<html>
 <body>
 Allows you to see problems reported by language annotators in the results of batch code inspection.
 </body>
 </html>`,
-			"",
-			&model.FileLocation{
+			Location: &model.FileLocation{
 				Path:        "settings.gradle",
 				StartLine:   3,
 				EndLine:     3,
@@ -46,16 +43,14 @@ Allows you to see problems reported by language annotators in the results of bat
 			},
 		},
 		{
-			model.GenericAnnotationType,
-			"failure",
-			"Cannot resolve symbol 'FileVisitResult' ",
-			`<html>
+			Level: "failure",
+			Message: "Cannot resolve symbol 'FileVisitResult' ",
+			RawDetails: `<html>
 <body>
 Allows you to see problems reported by language annotators in the results of batch code inspection.
 </body>
 </html>`,
-			"",
-			&model.FileLocation{
+			Location: &model.FileLocation{
 				Path:        "settings.gradle",
 				StartLine:   4,
 				EndLine:     4,
@@ -64,16 +59,14 @@ Allows you to see problems reported by language annotators in the results of bat
 			},
 		},
 		{
-			model.GenericAnnotationType,
-			"failure",
-			"Cannot resolve symbol 'FileVisitResult' ",
-			`<html>
+			Level: "failure",
+			Message: "Cannot resolve symbol 'FileVisitResult' ",
+			RawDetails: `<html>
 <body>
 Allows you to see problems reported by language annotators in the results of batch code inspection.
 </body>
 </html>`,
-			"",
-			&model.FileLocation{
+			Location: &model.FileLocation{
 				Path:        "settings.gradle",
 				StartLine:   5,
 				EndLine:     5,
@@ -82,17 +75,15 @@ Allows you to see problems reported by language annotators in the results of bat
 			},
 		},
 		{
-			model.GenericAnnotationType,
-			"warning",
-			"Kotlin version that is used for building with Gradle (1.3.72) differs from the one bundled into the IDE plugin (1.4.10)",
-			`<html>
+			Level: "warning",
+			Message: "Kotlin version that is used for building with Gradle (1.3.72) differs from the one bundled into the IDE plugin (1.4.10)",
+			RawDetails: `<html>
 <body>
 This inspection reports that different IDE and Gradle plugin versions are used.
 This can cause inconsistencies between IDE and Gradle builds in error reporting or code behaviour.
 </body>
 </html>`,
-			"",
-			&model.FileLocation{
+			Location: &model.FileLocation{
 				Path:        "build.gradle",
 				StartLine:   11,
 				EndLine:     11,
