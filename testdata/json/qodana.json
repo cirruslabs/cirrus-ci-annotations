@@ -1,0 +1,150 @@
+{
+  "version":"3",
+  "listProblem":[
+    {
+      "tool":"Code Inspection",
+      "category":"General",
+      "type":"Annotator",
+      "severity":"Critical",
+      "comment":"Cannot resolve symbol \u0027ComponentSelection\u0027 ",
+      "detailsInfo":"\u003chtml\u003e\n\u003cbody\u003e\nAllows you to see problems reported by language annotators in the results of batch code inspection.\n\u003c/body\u003e\n\u003c/html\u003e",
+      "sources":[
+        {
+          "type":"file",
+          "path":"build.gradle",
+          "language":"Groovy",
+          "line":37,
+          "offset":16,
+          "length":18,
+          "code":{
+            "startLine":35,
+            "length":18,
+            "offset":87,
+            "surroundingCode":"updateLibraries.resolutionStrategy \u003d {\n  componentSelection { rules -\u003e\n    rules.all { ComponentSelection selection -\u003e\n      boolean rejected \u003d [\u0027dev\u0027, \u0027eap\u0027, \u0027M1\u0027].any { qualifier -\u003e\n        selection.candidate.version \u003d\u003d~ /(?i).*[.-]${qualifier}[.\\d-]*/"
+          }
+        }
+      ],
+      "attributes":{
+        "module":"project",
+        "inspectionName":"Annotator"
+      },
+      "hash":5140420465755563103
+    },
+    {
+      "tool":"Code Inspection",
+      "category":"General",
+      "type":"Annotator",
+      "severity":"Critical",
+      "comment":"Cannot resolve symbol \u0027FileType\u0027 ",
+      "detailsInfo":"\u003chtml\u003e\n\u003cbody\u003e\nAllows you to see problems reported by language annotators in the results of batch code inspection.\n\u003c/body\u003e\n\u003c/html\u003e",
+      "sources":[
+        {
+          "type":"file",
+          "path":"settings.gradle",
+          "language":"Groovy",
+          "line":3,
+          "offset":24,
+          "length":8,
+          "code":{
+            "startLine":1,
+            "length":8,
+            "offset":60,
+            "surroundingCode":"rootProject.name \u003d \u0027microservices\u0027\n\nimport static groovy.io.FileType.DIRECTORIES\nimport static groovy.io.FileVisitResult.CONTINUE\nimport static groovy.io.FileVisitResult.SKIP_SUBTREE"
+          }
+        }
+      ],
+      "attributes":{
+        "module":"project",
+        "inspectionName":"Annotator"
+      },
+      "hash":-1482452606135204573
+    },
+    {
+      "tool":"Code Inspection",
+      "category":"General",
+      "type":"Annotator",
+      "severity":"Critical",
+      "comment":"Cannot resolve symbol \u0027FileVisitResult\u0027 ",
+      "detailsInfo":"\u003chtml\u003e\n\u003cbody\u003e\nAllows you to see problems reported by language annotators in the results of batch code inspection.\n\u003c/body\u003e\n\u003c/html\u003e",
+      "sources":[
+        {
+          "type":"file",
+          "path":"settings.gradle",
+          "language":"Groovy",
+          "line":4,
+          "offset":24,
+          "length":15,
+          "code":{
+            "startLine":2,
+            "length":15,
+            "offset":70,
+            "surroundingCode":"\nimport static groovy.io.FileType.DIRECTORIES\nimport static groovy.io.FileVisitResult.CONTINUE\nimport static groovy.io.FileVisitResult.SKIP_SUBTREE\n"
+          }
+        }
+      ],
+      "attributes":{
+        "module":"project",
+        "inspectionName":"Annotator"
+      },
+      "hash":7395344392882020903
+    },
+    {
+      "tool":"Code Inspection",
+      "category":"General",
+      "type":"Annotator",
+      "severity":"Critical",
+      "comment":"Cannot resolve symbol \u0027FileVisitResult\u0027 ",
+      "detailsInfo":"\u003chtml\u003e\n\u003cbody\u003e\nAllows you to see problems reported by language annotators in the results of batch code inspection.\n\u003c/body\u003e\n\u003c/html\u003e",
+      "sources":[
+        {
+          "type":"file",
+          "path":"settings.gradle",
+          "language":"Groovy",
+          "line":5,
+          "offset":24,
+          "length":15,
+          "code":{
+            "startLine":3,
+            "length":15,
+            "offset":118,
+            "surroundingCode":"import static groovy.io.FileType.DIRECTORIES\nimport static groovy.io.FileVisitResult.CONTINUE\nimport static groovy.io.FileVisitResult.SKIP_SUBTREE\n\nfinal excludedDirs \u003d new HashSet([\"build\", \"src\", \".gogradle\"])"
+          }
+        }
+      ],
+      "attributes":{
+        "module":"project",
+        "inspectionName":"Annotator"
+      },
+      "hash":-6463470570687415117
+    },
+    {
+      "tool":"Code Inspection",
+      "category":"Kotlin",
+      "type":"Kotlin Gradle and IDE plugins versions are different",
+      "severity":"High",
+      "comment":"Kotlin version that is used for building with Gradle (1.3.72) differs from the one bundled into the IDE plugin (1.4.10)",
+      "detailsInfo":"\u003chtml\u003e\n\u003cbody\u003e\nThis inspection reports that different IDE and Gradle plugin versions are used.\nThis can cause inconsistencies between IDE and Gradle builds in error reporting or code behaviour.\n\u003c/body\u003e\n\u003c/html\u003e",
+      "sources":[
+        {
+          "type":"file",
+          "path":"build.gradle",
+          "language":"Groovy",
+          "line":11,
+          "offset":4,
+          "length":60,
+          "code":{
+            "startLine":9,
+            "length":60,
+            "offset":79,
+            "surroundingCode":"  dependencies {\n    classpath \u0027com.fkorotkov:gradle-libraries-plugin:1.0\u0027\n    classpath \u0027org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72\u0027\n  }\n}\n"
+          }
+        }
+      ],
+      "attributes":{
+        "module":"project",
+        "inspectionName":"DifferentKotlinGradleVersion"
+      },
+      "hash":7159002790632705271
+    }
+  ]
+}
