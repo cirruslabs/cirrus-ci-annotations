@@ -14,6 +14,9 @@ This module helps Cirrus CI to parse artifacts and find relative annotations to 
 * Ruby
   * RSpec
   * RuboCop
+* Swift
+  * XCLogParser
+* JetBrains Qodana
 * Create an [issue](https://github.com/cirruslabs/cirrus-ci-annotations/issues/new) to request support for other formats.
 
 # Contribution
