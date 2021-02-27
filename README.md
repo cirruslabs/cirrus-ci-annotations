@@ -9,15 +9,16 @@ This module helps Cirrus CI to parse artifacts and find relative annotations to 
 # Supported Formats
 
 * JUnit's XML
-* GolangCI's JSON
-* Android Lint
+* [GolangCI Lint](https://golangci-lint.run/)
+* [Android Lint](https://sites.google.com/a/android.com/tools/tips/lint)
 * Ruby
-  * RSpec
-  * RuboCop
+  * [RSpec](https://rspec.info/)
+  * [RuboCop](https://rubocop.org/)
 * Swift
-  * XCLogParser
-* JetBrains Qodana
-* Create an [issue](https://github.com/cirruslabs/cirrus-ci-annotations/issues/new) to request support for other formats.
+  * [XCLogParser](https://github.com/spotify/XCLogParser)
+* [JetBrains Qodana](https://github.com/JetBrains/Qodana)
+
+[Create an issue](https://github.com/cirruslabs/cirrus-ci-annotations/issues/new) to request support for other formats.
 
 # Contribution
 
