@@ -1,0 +1,731 @@
+[
+  {
+    "parentIdentifier" : "",
+    "fetchedFromCache" : false,
+    "title" : "Building project noapp with scheme noapp",
+    "warningCount" : 0,
+    "duration" : 10.304448962211609,
+    "startTimestamp" : 1614351845.682929,
+    "signature" : "Building project noapp with scheme noapp",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351855.9861012,
+    "compilationDuration" : 10.30317211151123,
+    "endDate" : "2021-02-26T15:04:15.987000Z",
+    "errorCount" : 1,
+    "domain" : "Xcode.IDEActivityLogDomainType.BuildLog",
+    "type" : "main",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_1",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351855.9873781,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:05.683000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+      {
+        "characterRangeStart" : 0,
+        "startingColumnNumber" : 0,
+        "endingColumnNumber" : 0,
+        "characterRangeEnd" : 0,
+        "detail" : "note: Using new build system\rnote: Building targets in parallel\rnote: Planning build\rnote: Constructing build description\r",
+        "title" : "Using new build system",
+        "endingLineNumber" : 0,
+        "type" : "note",
+        "documentURL" : "",
+        "startingLineNumber" : 0,
+        "severity" : 0
+      },
+      {
+        "characterRangeStart" : 0,
+        "startingColumnNumber" : 0,
+        "endingColumnNumber" : 0,
+        "characterRangeEnd" : 0,
+        "detail" : "note: Using new build system\rnote: Building targets in parallel\rnote: Planning build\rnote: Constructing build description\r",
+        "title" : "Building targets in parallel",
+        "endingLineNumber" : 0,
+        "type" : "note",
+        "documentURL" : "",
+        "startingLineNumber" : 0,
+        "severity" : 0
+      },
+      {
+        "characterRangeStart" : 0,
+        "startingColumnNumber" : 0,
+        "endingColumnNumber" : 0,
+        "characterRangeEnd" : 0,
+        "detail" : "note: Using new build system\rnote: Building targets in parallel\rnote: Planning build\rnote: Constructing build description\r",
+        "title" : "Planning build",
+        "endingLineNumber" : 0,
+        "type" : "note",
+        "documentURL" : "",
+        "startingLineNumber" : 0,
+        "severity" : 0
+      },
+      {
+        "characterRangeStart" : 0,
+        "startingColumnNumber" : 0,
+        "endingColumnNumber" : 0,
+        "characterRangeEnd" : 0,
+        "detail" : "note: Using new build system\rnote: Building targets in parallel\rnote: Planning build\rnote: Constructing build description\r",
+        "title" : "Constructing build description",
+        "endingLineNumber" : 0,
+        "type" : "note",
+        "documentURL" : "",
+        "startingLineNumber" : 0,
+        "severity" : 0
+      }
+    ],
+    "documentURL" : "",
+    "detailStepType" : "none"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_1",
+    "fetchedFromCache" : false,
+    "title" : "Build target noapp",
+    "warningCount" : 0,
+    "duration" : 7.5929040908813477,
+    "startTimestamp" : 1614351848.3931971,
+    "signature" : "noapp",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351855.9861012,
+    "compilationDuration" : 7.5929040908813477,
+    "endDate" : "2021-02-26T15:04:15.986000Z",
+    "errorCount" : 1,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "target",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351855.9861012,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.393000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "none"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "CreateBuildDirectory \/Users\/admin\/dd\/Build\/Products",
+    "warningCount" : 0,
+    "duration" : 0.00091707706451416016,
+    "startTimestamp" : 1614351848.3931971,
+    "signature" : "CreateBuildDirectory \/Users\/admin\/dd\/Build\/Products",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.394114,
+    "compilationDuration" : 0.00091707706451416016,
+    "endDate" : "2021-02-26T15:04:08.394000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_3",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.394114,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.393000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "other"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "CreateBuildDirectory \/Users\/admin\/dd\/Build\/Intermediates.noindex",
+    "warningCount" : 0,
+    "duration" : 0.00051999092102050781,
+    "startTimestamp" : 1614351848.393543,
+    "signature" : "CreateBuildDirectory \/Users\/admin\/dd\/Build\/Intermediates.noindex",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.394063,
+    "compilationDuration" : 0.00051999092102050781,
+    "endDate" : "2021-02-26T15:04:08.394000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_4",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.394063,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.394000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "other"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "Write Entitlements.plist",
+    "warningCount" : 0,
+    "duration" : 0.00049102306365966797,
+    "startTimestamp" : 1614351848.394774,
+    "signature" : "WriteAuxiliaryFile \/Users\/admin\/dd\/Build\/Intermediates.noindex\/noapp.build\/Debug\/noapp.build\/DerivedSources\/Entitlements.plist",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.3952651,
+    "compilationDuration" : 0.00049102306365966797,
+    "endDate" : "2021-02-26T15:04:08.395000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_5",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.3952651,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.395000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "writeAuxiliaryFile"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "Process product packaging",
+    "warningCount" : 0,
+    "duration" : 0.00059199333190917969,
+    "startTimestamp" : 1614351848.3955441,
+    "signature" : "ProcessProductPackaging \"\" \/Users\/admin\/dd\/Build\/Intermediates.noindex\/noapp.build\/Debug\/noapp.build\/noapp.xcent",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.396136,
+    "compilationDuration" : 0.00059199333190917969,
+    "endDate" : "2021-02-26T15:04:08.396000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_6",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.396136,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.396000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "other"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "Write noapp.hmap",
+    "warningCount" : 0,
+    "duration" : 0.0023930072784423828,
+    "startTimestamp" : 1614351848.3965259,
+    "signature" : "WriteAuxiliaryFile \/Users\/admin\/dd\/Build\/Intermediates.noindex\/noapp.build\/Debug\/noapp.build\/noapp.hmap",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.3989191,
+    "compilationDuration" : 0.0023930072784423828,
+    "endDate" : "2021-02-26T15:04:08.399000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_7",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.3989191,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.397000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "writeAuxiliaryFile"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "Write noapp-project-headers.hmap",
+    "warningCount" : 0,
+    "duration" : 0.0020040273666381836,
+    "startTimestamp" : 1614351848.3969889,
+    "signature" : "WriteAuxiliaryFile \/Users\/admin\/dd\/Build\/Intermediates.noindex\/noapp.build\/Debug\/noapp.build\/noapp-project-headers.hmap",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.398993,
+    "compilationDuration" : 0.0020040273666381836,
+    "endDate" : "2021-02-26T15:04:08.399000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_8",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.398993,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.397000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "writeAuxiliaryFile"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "Write noapp-own-target-headers.hmap",
+    "warningCount" : 0,
+    "duration" : 0.0016560554504394531,
+    "startTimestamp" : 1614351848.397362,
+    "signature" : "WriteAuxiliaryFile \/Users\/admin\/dd\/Build\/Intermediates.noindex\/noapp.build\/Debug\/noapp.build\/noapp-own-target-headers.hmap",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.399018,
+    "compilationDuration" : 0.0016560554504394531,
+    "endDate" : "2021-02-26T15:04:08.399000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_9",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.399018,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.397000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "writeAuxiliaryFile"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "Write noapp-generated-files.hmap",
+    "warningCount" : 0,
+    "duration" : 0.0013040304183959961,
+    "startTimestamp" : 1614351848.397748,
+    "signature" : "WriteAuxiliaryFile \/Users\/admin\/dd\/Build\/Intermediates.noindex\/noapp.build\/Debug\/noapp.build\/noapp-generated-files.hmap",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.3990521,
+    "compilationDuration" : 0.0013040304183959961,
+    "endDate" : "2021-02-26T15:04:08.399000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_10",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.3990521,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.398000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "writeAuxiliaryFile"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "Write noapp-all-target-headers.hmap",
+    "warningCount" : 0,
+    "duration" : 0.0010269880294799805,
+    "startTimestamp" : 1614351848.3980479,
+    "signature" : "WriteAuxiliaryFile \/Users\/admin\/dd\/Build\/Intermediates.noindex\/noapp.build\/Debug\/noapp.build\/noapp-all-target-headers.hmap",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.399075,
+    "compilationDuration" : 0.0010269880294799805,
+    "endDate" : "2021-02-26T15:04:08.399000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_11",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.399075,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.398000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "writeAuxiliaryFile"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "Write noapp-all-non-framework-target-headers.hmap",
+    "warningCount" : 0,
+    "duration" : 0.00080096721649169922,
+    "startTimestamp" : 1614351848.3983579,
+    "signature" : "WriteAuxiliaryFile \/Users\/admin\/dd\/Build\/Intermediates.noindex\/noapp.build\/Debug\/noapp.build\/noapp-all-non-framework-target-headers.hmap",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.399159,
+    "compilationDuration" : 0.00080096721649169922,
+    "endDate" : "2021-02-26T15:04:08.399000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_12",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.399159,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.398000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "writeAuxiliaryFile"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "Write all-product-headers.yaml",
+    "warningCount" : 0,
+    "duration" : 0.00052702426910400391,
+    "startTimestamp" : 1614351848.398669,
+    "signature" : "WriteAuxiliaryFile \/Users\/admin\/dd\/Build\/Intermediates.noindex\/noapp.build\/Debug\/noapp.build\/all-product-headers.yaml",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.3991961,
+    "compilationDuration" : 0.00052702426910400391,
+    "endDate" : "2021-02-26T15:04:08.399000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_13",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.3991961,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.399000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "writeAuxiliaryFile"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "Write noapp.SwiftFileList (x86_64)",
+    "warningCount" : 0,
+    "duration" : 0.0010969638824462891,
+    "startTimestamp" : 1614351848.39995,
+    "signature" : "WriteAuxiliaryFile \/Users\/admin\/dd\/Build\/Intermediates.noindex\/noapp.build\/Debug\/noapp.build\/Objects-normal\/x86_64\/noapp.SwiftFileList",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.401047,
+    "compilationDuration" : 0.0010969638824462891,
+    "endDate" : "2021-02-26T15:04:08.401000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_14",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.401047,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.400000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "writeAuxiliaryFile"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "Write noapp-OutputFileMap.json (x86_64)",
+    "warningCount" : 0,
+    "duration" : 0.00077795982360839844,
+    "startTimestamp" : 1614351848.400316,
+    "signature" : "WriteAuxiliaryFile \/Users\/admin\/dd\/Build\/Intermediates.noindex\/noapp.build\/Debug\/noapp.build\/Objects-normal\/x86_64\/noapp-OutputFileMap.json",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.401094,
+    "compilationDuration" : 0.00077795982360839844,
+    "endDate" : "2021-02-26T15:04:08.401000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_15",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.401094,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.400000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "writeAuxiliaryFile"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "Write noapp.LinkFileList (x86_64)",
+    "warningCount" : 0,
+    "duration" : 0.001237034797668457,
+    "startTimestamp" : 1614351848.4008031,
+    "signature" : "WriteAuxiliaryFile \/Users\/admin\/dd\/Build\/Intermediates.noindex\/noapp.build\/Debug\/noapp.build\/Objects-normal\/x86_64\/noapp.LinkFileList",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351848.40204,
+    "compilationDuration" : 0.001237034797668457,
+    "endDate" : "2021-02-26T15:04:08.402000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_16",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351848.40204,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.401000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "writeAuxiliaryFile"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_2",
+    "fetchedFromCache" : false,
+    "title" : "Compile Swift source files (x86_64)",
+    "warningCount" : 0,
+    "duration" : 7.5841300487518311,
+    "startTimestamp" : 1614351848.4019709,
+    "signature" : "CompileSwiftSources normal x86_64 com.apple.xcode.tools.swift.compiler",
+    "errors" : [
+
+    ],
+    "compilationEndTimestamp" : 1614351855.9861012,
+    "compilationDuration" : 7.5841300487518311,
+    "endDate" : "2021-02-26T15:04:15.986000Z",
+    "errorCount" : 0,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_17",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351855.9861012,
+    "architecture" : "",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.402000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "",
+    "detailStepType" : "swiftAggregatedCompilation"
+  },
+  {
+    "parentIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_17",
+    "fetchedFromCache" : false,
+    "title" : "Compile main.swift (x86_64)",
+    "warningCount" : 0,
+    "duration" : 7.5623849630355835,
+    "startTimestamp" : 1614351848.423409,
+    "signature" : "CompileSwift normal x86_64 \/var\/folders\/sr\/b58hwhtj0jbcf4r09zmg0wlc0000gn\/T\/cirrus-ci-build\/noapp\/main.swift",
+    "errors" : [
+      {
+        "characterRangeStart" : 0,
+        "startingColumnNumber" : 1,
+        "endingColumnNumber" : 1,
+        "characterRangeEnd" : 19,
+        "detail" : "\/var\/folders\/sr\/b58hwhtj0jbcf4r09zmg0wlc0000gn\/T\/cirrus-ci-build\/noapp\/main.swift:3:1: error: cannot find 'printeh' in scope\nprinteh(\"Hello, World!\")\n^~~~~~~",
+        "title" : "Cannot find 'printeh' in scope",
+        "endingLineNumber" : 3,
+        "type" : "swiftError",
+        "documentURL" : "file:\/\/\/var\/folders\/sr\/b58hwhtj0jbcf4r09zmg0wlc0000gn\/T\/cirrus-ci-build\/noapp\/main.swift",
+        "startingLineNumber" : 3,
+        "severity" : 2
+      }
+    ],
+    "compilationEndTimestamp" : 1614351855.9857941,
+    "compilationDuration" : 7.5623849630355835,
+    "endDate" : "2021-02-26T15:04:15.986000Z",
+    "errorCount" : 1,
+    "domain" : "com.apple.dt.IDE.BuildLogSection",
+    "type" : "detail",
+    "identifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8_18",
+    "buildStatus" : "failed",
+    "schema" : "noapp",
+    "subSteps" : [
+
+    ],
+    "endTimestamp" : 1614351855.9857941,
+    "architecture" : "x86_64",
+    "machineName" : "admin’s Mac",
+    "buildIdentifier" : "admin’s Mac_0E235DE7-FDF7-4564-B99C-0A8CD9F33AB8",
+    "startDate" : "2021-02-26T15:04:08.423000Z",
+    "warnings" : [
+
+    ],
+    "notes" : [
+
+    ],
+    "documentURL" : "file:\/\/\/var\/folders\/sr\/b58hwhtj0jbcf4r09zmg0wlc0000gn\/T\/cirrus-ci-build\/noapp\/main.swift",
+    "detailStepType" : "swiftCompilation"
+  }
+]

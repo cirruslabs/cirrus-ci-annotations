@@ -23,6 +23,8 @@ func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 		return parsers.ParseRuboCopAnnotations(path)
 	case "qodana":
 		return parsers.ParseQodanaAnnotations(path)
+	case "xclogparser":
+		return parsers.ParseXclogparserAnnotations(path)
 	default:
 		return nil, make([]model.Annotation, 0)
 	}
