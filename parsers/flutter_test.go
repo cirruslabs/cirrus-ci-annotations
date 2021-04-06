@@ -8,7 +8,16 @@ import (
 	"testing"
 )
 
-func TestFlutter(t *testing.T) {
+func TestFlutterSucceeding(t *testing.T) {
+	err, actual := parsers.ParseFlutterAnnotations(filepath.Join("..", "testdata", "json", "flutter-succeeding.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	assert.Empty(t, actual)
+}
+
+func TestFlutterFailing(t *testing.T) {
 	expected := []model.Annotation{
 		{
 			Type:    model.TestResultAnnotationType,
@@ -48,7 +57,7 @@ func TestFlutter(t *testing.T) {
 		},
 	}
 
-	err, actual := parsers.ParseFlutterAnnotations(filepath.Join("..", "testdata", "json", "flutter.json"))
+	err, actual := parsers.ParseFlutterAnnotations(filepath.Join("..", "testdata", "json", "flutter-failing.json"))
 	if err != nil {
 		t.Fatal(err)
 	}

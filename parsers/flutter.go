@@ -9,6 +9,7 @@ import (
 )
 
 type flutterTest struct {
+	ID     int64
 	Name   string
 	URL    string
 	Line   int64
@@ -16,8 +17,25 @@ type flutterTest struct {
 }
 
 type flutterEntry struct {
-	Type string
-	Test flutterTest
+	Type   string
+	TestID int64
+	Result string
+	Test   flutterTest
+}
+
+func annotationFromTest(test flutterTest) model.Annotation {
+	return model.Annotation{
+		Type:    model.TestResultAnnotationType,
+		Level:   "warning",
+		Message: test.Name,
+		Location: &model.FileLocation{
+			Path:        strings.TrimPrefix(test.URL, "file://"),
+			StartLine:   test.Line,
+			EndLine:     test.Line,
+			StartColumn: test.Column,
+			EndColumn:   test.Column,
+		},
+	}
 }
 
 func ParseFlutterAnnotations(path string) (error, []model.Annotation) {
@@ -27,6 +45,7 @@ func ParseFlutterAnnotations(path string) (error, []model.Annotation) {
 	}
 
 	decoder := json.NewDecoder(file)
+	runningTests := map[int64]flutterTest{}
 	result := make([]model.Annotation, 0)
 
 	for {
@@ -43,24 +62,17 @@ func ParseFlutterAnnotations(path string) (error, []model.Annotation) {
 		// Does it look like a TestStartEvent[1] with a valid file associated with it?
 		//
 		// [1]: https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.schema.json
-		if entry.Type != "testStart" || entry.Test.URL == "" {
-			continue
+		switch entry.Type {
+		case "testStart":
+			runningTests[entry.Test.ID] = entry.Test
+		case "testDone":
+			if entry.Result != "success" {
+				test, ok := runningTests[entry.TestID]
+				if ok {
+					result = append(result, annotationFromTest(test))
+				}
+			}
 		}
-
-		var parsedAnnotation = model.Annotation{
-			Type:    model.TestResultAnnotationType,
-			Level:   "warning",
-			Message: entry.Test.Name,
-			Location: &model.FileLocation{
-				Path:        strings.TrimPrefix(entry.Test.URL, "file://"),
-				StartLine:   entry.Test.Line,
-				EndLine:     entry.Test.Line,
-				StartColumn: entry.Test.Column,
-				EndColumn:   entry.Test.Column,
-			},
-		}
-
-		result = append(result, parsedAnnotation)
 	}
 
 	return nil, result
