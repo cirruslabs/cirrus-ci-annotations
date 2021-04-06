@@ -25,6 +25,8 @@ func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 		return parsers.ParseQodanaAnnotations(path)
 	case "xclogparser":
 		return parsers.ParseXclogparserAnnotations(path)
+	case "flutter":
+		return parsers.ParseFlutterAnnotations(path)
 	default:
 		return nil, make([]model.Annotation, 0)
 	}
