@@ -21,7 +21,7 @@ func TestFlutterFailing(t *testing.T) {
 	expected := []model.Annotation{
 		{
 			Type:    model.TestResultAnnotationType,
-			Level:   "warning",
+			Level:   "failure",
 			Message: "Counter value should start at 0",
 			Location: &model.FileLocation{
 				Path:        "/tmp/cirrus-ci-build/test/counter_test.dart",
@@ -33,7 +33,7 @@ func TestFlutterFailing(t *testing.T) {
 		},
 		{
 			Type:    model.TestResultAnnotationType,
-			Level:   "warning",
+			Level:   "failure",
 			Message: "Counter value should be incremented",
 			Location: &model.FileLocation{
 				Path:        "/tmp/cirrus-ci-build/test/counter_test.dart",
@@ -45,7 +45,7 @@ func TestFlutterFailing(t *testing.T) {
 		},
 		{
 			Type:    model.TestResultAnnotationType,
-			Level:   "warning",
+			Level:   "failure",
 			Message: "Counter value should be decremented",
 			Location: &model.FileLocation{
 				Path:        "/tmp/cirrus-ci-build/test/counter_test.dart",
