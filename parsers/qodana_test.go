@@ -11,7 +11,7 @@ import (
 func TestQodana(t *testing.T) {
 	expected := []model.Annotation{
 		{
-			Level: "failure",
+			Level:   "failure",
 			Message: "Cannot resolve symbol 'ComponentSelection' ",
 			RawDetails: `<html>
 <body>
@@ -27,7 +27,7 @@ Allows you to see problems reported by language annotators in the results of bat
 			},
 		},
 		{
-			Level: "failure",
+			Level:   "failure",
 			Message: "Cannot resolve symbol 'FileType' ",
 			RawDetails: `<html>
 <body>
@@ -43,7 +43,7 @@ Allows you to see problems reported by language annotators in the results of bat
 			},
 		},
 		{
-			Level: "failure",
+			Level:   "failure",
 			Message: "Cannot resolve symbol 'FileVisitResult' ",
 			RawDetails: `<html>
 <body>
@@ -59,7 +59,7 @@ Allows you to see problems reported by language annotators in the results of bat
 			},
 		},
 		{
-			Level: "failure",
+			Level:   "failure",
 			Message: "Cannot resolve symbol 'FileVisitResult' ",
 			RawDetails: `<html>
 <body>
@@ -75,7 +75,7 @@ Allows you to see problems reported by language annotators in the results of bat
 			},
 		},
 		{
-			Level: "warning",
+			Level:   "warning",
 			Message: "Kotlin version that is used for building with Gradle (1.3.72) differs from the one bundled into the IDE plugin (1.4.10)",
 			RawDetails: `<html>
 <body>

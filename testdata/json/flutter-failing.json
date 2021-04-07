@@ -1,0 +1,17 @@
+{"protocolVersion":"0.1.1","runnerVersion":"1.16.8","pid":147,"type":"start","time":0}
+{"suite":{"id":0,"platform":"vm","path":"/tmp/cirrus-ci-build/test/counter_test.dart"},"type":"suite","time":0}
+{"test":{"id":1,"name":"loading /tmp/cirrus-ci-build/test/counter_test.dart","suiteID":0,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":1}
+{"count":1,"type":"allSuites","time":3}
+{"testID":1,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":3158}
+{"group":{"id":2,"suiteID":0,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":null},"type":"group","time":3166}
+{"group":{"id":3,"suiteID":0,"parentID":2,"name":"Counter","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":5,"column":3,"url":"file:///tmp/cirrus-ci-build/test/counter_test.dart"},"type":"group","time":3171}
+{"test":{"id":4,"name":"Counter value should start at 0","suiteID":0,"groupIDs":[2,3],"metadata":{"skip":false,"skipReason":null},"line":6,"column":5,"url":"file:///tmp/cirrus-ci-build/test/counter_test.dart"},"type":"testStart","time":3172}
+{"testID":4,"error":"Expected: <0>\n  Actual: <1>\n","stackTrace":"package:test_api            expect\ntest/counter_test.dart 7:7  main.<fn>.<fn>\n","isFailure":true,"type":"error","time":3350}
+{"testID":4,"result":"failure","skipped":false,"hidden":false,"type":"testDone","time":3351}
+{"test":{"id":5,"name":"Counter value should be incremented","suiteID":0,"groupIDs":[2,3],"metadata":{"skip":false,"skipReason":null},"line":10,"column":5,"url":"file:///tmp/cirrus-ci-build/test/counter_test.dart"},"type":"testStart","time":3352}
+{"testID":5,"error":"Expected: <1>\n  Actual: <2>\n","stackTrace":"package:test_api             expect\ntest/counter_test.dart 15:7  main.<fn>.<fn>\n","isFailure":true,"type":"error","time":3378}
+{"testID":5,"result":"failure","skipped":false,"hidden":false,"type":"testDone","time":3378}
+{"test":{"id":6,"name":"Counter value should be decremented","suiteID":0,"groupIDs":[2,3],"metadata":{"skip":false,"skipReason":null},"line":18,"column":5,"url":"file:///tmp/cirrus-ci-build/test/counter_test.dart"},"type":"testStart","time":3379}
+{"testID":6,"error":"Expected: <-1>\n  Actual: <0>\n","stackTrace":"package:test_api             expect\ntest/counter_test.dart 23:7  main.<fn>.<fn>\n","isFailure":true,"type":"error","time":3387}
+{"testID":6,"result":"failure","skipped":false,"hidden":false,"type":"testDone","time":3387}
+{"success":false,"type":"done","time":3406}
