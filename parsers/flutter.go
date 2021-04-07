@@ -26,7 +26,7 @@ type flutterEntry struct {
 func annotationFromTest(test flutterTest) model.Annotation {
 	return model.Annotation{
 		Type:    model.TestResultAnnotationType,
-		Level:   "warning",
+		Level:   "failure",
 		Message: test.Name,
 		Location: &model.FileLocation{
 			Path:        strings.TrimPrefix(test.URL, "file://"),
