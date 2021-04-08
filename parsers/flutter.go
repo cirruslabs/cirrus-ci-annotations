@@ -18,13 +18,14 @@ type flutterTest struct {
 
 type flutterEntry struct {
 	Type   string
+	Error  string
 	TestID int64
 	Result string
 	Test   flutterTest
 }
 
-func annotationFromTest(test flutterTest) model.Annotation {
-	return model.Annotation{
+func annotationFromTest(test *flutterTest) *model.Annotation {
+	return &model.Annotation{
 		Type:    model.TestResultAnnotationType,
 		Level:   "failure",
 		Message: test.Name,
@@ -45,7 +46,7 @@ func ParseFlutterAnnotations(path string) (error, []model.Annotation) {
 	}
 
 	decoder := json.NewDecoder(file)
-	runningTests := map[int64]flutterTest{}
+	runningTests := map[int64]*model.Annotation{}
 	result := make([]model.Annotation, 0)
 
 	for {
@@ -64,12 +65,16 @@ func ParseFlutterAnnotations(path string) (error, []model.Annotation) {
 		// [1]: https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.schema.json
 		switch entry.Type {
 		case "testStart":
-			runningTests[entry.Test.ID] = entry.Test
+			runningTests[entry.Test.ID] = annotationFromTest(&entry.Test)
+		case "error":
+			if annotation, ok := runningTests[entry.TestID]; ok {
+				annotation.RawDetails = entry.Error
+			}
 		case "testDone":
 			if entry.Result != "success" {
-				test, ok := runningTests[entry.TestID]
-				if ok {
-					result = append(result, annotationFromTest(test))
+				if annotation, ok := runningTests[entry.TestID]; ok {
+					result = append(result, *annotation)
+					delete(runningTests, entry.TestID)
 				}
 			}
 		}
