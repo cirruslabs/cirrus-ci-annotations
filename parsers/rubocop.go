@@ -74,8 +74,8 @@ func ParseRuboCopAnnotations(path string) (error, []model.Annotation) {
 			}
 
 			var parsedAnnotation = model.Annotation{
-				Level:              level,
-				Message:            fmt.Sprintf("%s: %s", offense.CopName, offense.Message),
+				Level:   level,
+				Message: fmt.Sprintf("%s: %s", offense.CopName, offense.Message),
 				Location: &model.FileLocation{
 					Path:        file.Path,
 					StartLine:   offense.Location.Line,

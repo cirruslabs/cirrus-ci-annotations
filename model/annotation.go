@@ -33,8 +33,8 @@ type FileLocation struct {
 
 // mimics https://developer.github.com/v3/checks/runs/#annotations-object
 type Annotation struct {
-	Level              AnnotationLevel
-	Message            string
-	RawDetails         string
-	Location           *FileLocation
+	Level      AnnotationLevel
+	Message    string
+	RawDetails string
+	Location   *FileLocation
 }

@@ -63,9 +63,9 @@ func ParseRSpecAnnotations(path string) (error, []model.Annotation) {
 		}
 
 		var parsedAnnotation = model.Annotation{
-			Level:              level,
-			Message:            example.FullDescription,
-			RawDetails:         rawDetails,
+			Level:      level,
+			Message:    example.FullDescription,
+			RawDetails: rawDetails,
 			Location: &model.FileLocation{
 				Path:      filepath.Clean(example.FilePath),
 				StartLine: example.LineNumber,

@@ -44,8 +44,8 @@ func TestFlutterFailing(t *testing.T) {
 			},
 		},
 		{
-			Level:   model.LevelFailure,
-			Message: "Counter value should be decremented",
+			Level:      model.LevelFailure,
+			Message:    "Counter value should be decremented",
 			RawDetails: "Expected: <-1>\n  Actual: <0>\n",
 			Location: &model.FileLocation{
 				Path:        "/tmp/cirrus-ci-build/test/counter_test.dart",
