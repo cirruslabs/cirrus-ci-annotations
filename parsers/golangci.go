@@ -38,9 +38,7 @@ func ParseGoLangCIAnnotations(path string) (error, []model.Annotation) {
 	result := make([]model.Annotation, 0)
 	for _, issue := range report.Issues {
 		var parsedAnnotation = model.Annotation{
-			Type:               model.TestResultAnnotationType,
 			Level:              "failure",
-			FullyQualifiedName: issue.FromLinter,
 			Message:            fmt.Sprintf("%s (%s)", issue.Text, issue.FromLinter),
 			Location: &model.FileLocation{
 				Path:        issue.Pos.Filename,

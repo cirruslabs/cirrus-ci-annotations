@@ -34,11 +34,9 @@ import (
 func Test_RSpec_MultipleStates(t *testing.T) {
 	var expectedAnnotations = []model.Annotation{
 		{
-			Type:               model.TestResultAnnotationType,
 			Level:              "notice",
 			Message:            "Dummy gets skipped",
 			RawDetails:         "not implemented yet",
-			FullyQualifiedName: "./spec/dummy_spec.rb[1:2]",
 			Location: &model.FileLocation{
 				Path:      "spec/dummy_spec.rb",
 				StartLine: 11,
@@ -46,11 +44,9 @@ func Test_RSpec_MultipleStates(t *testing.T) {
 			},
 		},
 		{
-			Type:               model.TestResultAnnotationType,
 			Level:              "failure",
 			Message:            "Dummy fails",
 			RawDetails:         "\nexpected: 2\n     got: 1\n\n(compared using ==)\n",
-			FullyQualifiedName: "./spec/dummy_spec.rb[1:3]",
 			Location: &model.FileLocation{
 				Path:      "spec/dummy_spec.rb",
 				StartLine: 16,

@@ -62,11 +62,9 @@ func ParseRSpecAnnotations(path string) (error, []model.Annotation) {
 		}
 
 		var parsedAnnotation = model.Annotation{
-			Type:               model.TestResultAnnotationType,
 			Level:              level,
 			Message:            example.FullDescription,
 			RawDetails:         rawDetails,
-			FullyQualifiedName: example.ID,
 			Location: &model.FileLocation{
 				Path:      filepath.Clean(example.FilePath),
 				StartLine: example.LineNumber,

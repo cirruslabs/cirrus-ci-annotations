@@ -12,10 +12,8 @@ import (
 func Test_RuboCop_DocsExample(t *testing.T) {
 	var expectedAnnotations = []model.Annotation{
 		{
-			Type:               model.LintResultAnnotationType,
 			Level:              "notice",
 			Message:            "LineLength: Line is too long. [81/80]",
-			FullyQualifiedName: "lib/bar.rb-0",
 			Location: &model.FileLocation{
 				Path:        "lib/bar.rb",
 				StartLine:   546,
@@ -25,10 +23,8 @@ func Test_RuboCop_DocsExample(t *testing.T) {
 			},
 		},
 		{
-			Type:               model.LintResultAnnotationType,
 			Level:              "warning",
 			Message:            "UnreachableCode: Unreachable code detected.",
-			FullyQualifiedName: "lib/bar.rb-1",
 			Location: &model.FileLocation{
 				Path:        "lib/bar.rb",
 				StartLine:   15,
