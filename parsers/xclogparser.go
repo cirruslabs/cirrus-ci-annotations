@@ -23,7 +23,7 @@ type xclogparserReport struct {
 	Notes    []xclogparserEntry
 }
 
-func (entry *xclogparserEntry) ToAnnotation(level string) model.Annotation {
+func (entry *xclogparserEntry) ToAnnotation(level model.AnnotationLevel) model.Annotation {
 	return model.Annotation{
 		Level:      level,
 		Message:    entry.Title,
@@ -58,7 +58,7 @@ func ParseXclogparserAnnotations(path string) (error, []model.Annotation) {
 				continue
 			}
 
-			result = append(result, reportError.ToAnnotation("failure"))
+			result = append(result, reportError.ToAnnotation(model.LevelFailure))
 		}
 
 		for _, reportWarning := range report.Warnings {
@@ -66,7 +66,7 @@ func ParseXclogparserAnnotations(path string) (error, []model.Annotation) {
 				continue
 			}
 
-			result = append(result, reportWarning.ToAnnotation("warning"))
+			result = append(result, reportWarning.ToAnnotation(model.LevelWarning))
 		}
 
 		for _, reportNote := range report.Notes {
@@ -74,7 +74,7 @@ func ParseXclogparserAnnotations(path string) (error, []model.Annotation) {
 				continue
 			}
 
-			result = append(result, reportNote.ToAnnotation("notice"))
+			result = append(result, reportNote.ToAnnotation(model.LevelNotice))
 		}
 	}
 

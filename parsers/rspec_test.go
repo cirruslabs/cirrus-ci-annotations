@@ -34,7 +34,7 @@ import (
 func Test_RSpec_MultipleStates(t *testing.T) {
 	var expectedAnnotations = []model.Annotation{
 		{
-			Level:              "notice",
+			Level:              model.LevelNotice,
 			Message:            "Dummy gets skipped",
 			RawDetails:         "not implemented yet",
 			Location: &model.FileLocation{
@@ -44,7 +44,7 @@ func Test_RSpec_MultipleStates(t *testing.T) {
 			},
 		},
 		{
-			Level:              "failure",
+			Level:              model.LevelFailure,
 			Message:            "Dummy fails",
 			RawDetails:         "\nexpected: 2\n     got: 1\n\n(compared using ==)\n",
 			Location: &model.FileLocation{

@@ -21,12 +21,12 @@ func ParseJUnitAnnotations(path string) (error, []model.Annotation) {
 			switch test.Status {
 			case junit.StatusPassed:
 				parsedAnnotation = model.Annotation{
-					Level:              "notice",
+					Level:              model.LevelNotice,
 					Message:            fqn,
 				}
 			case junit.StatusFailed:
 				parsedAnnotation = model.Annotation{
-					Level:              "failure",
+					Level:              model.LevelFailure,
 					Message:            fqn,
 					RawDetails:         test.Error.Error(),
 					Location: util.GuessLocationIgnored(

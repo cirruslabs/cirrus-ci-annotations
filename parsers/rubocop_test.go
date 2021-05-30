@@ -12,7 +12,7 @@ import (
 func Test_RuboCop_DocsExample(t *testing.T) {
 	var expectedAnnotations = []model.Annotation{
 		{
-			Level:              "notice",
+			Level:              model.LevelNotice,
 			Message:            "LineLength: Line is too long. [81/80]",
 			Location: &model.FileLocation{
 				Path:        "lib/bar.rb",
@@ -23,7 +23,7 @@ func Test_RuboCop_DocsExample(t *testing.T) {
 			},
 		},
 		{
-			Level:              "warning",
+			Level:              model.LevelWarning,
 			Message:            "UnreachableCode: Unreachable code detected.",
 			Location: &model.FileLocation{
 				Path:        "lib/bar.rb",

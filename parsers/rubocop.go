@@ -11,12 +11,12 @@ import (
 // annotation levels using RuboCop's SimpleTextFormatter colors[2] as a hint.
 // [1]: https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Severity
 // [2]: https://www.rubydoc.info/gems/rubocop/RuboCop/Formatter/SimpleTextFormatter#COLOR_FOR_SEVERITY-constant
-var rubocopSeverityMapping = map[string]string{
-	"refactor":   "notice",
-	"convention": "notice",
-	"warning":    "warning",
-	"error":      "failure",
-	"fatal":      "failure",
+var rubocopSeverityMapping = map[string]model.AnnotationLevel{
+	"refactor":   model.LevelNotice,
+	"convention": model.LevelNotice,
+	"warning":    model.LevelWarning,
+	"error":      model.LevelFailure,
+	"fatal":      model.LevelFailure,
 }
 
 type rubocopLocation struct {
@@ -70,7 +70,7 @@ func ParseRuboCopAnnotations(path string) (error, []model.Annotation) {
 
 			// No matter the severity, corrected offenses get demoted to "notice" level
 			if offense.Corrected {
-				level = "notice"
+				level = model.LevelNotice
 			}
 
 			var parsedAnnotation = model.Annotation{

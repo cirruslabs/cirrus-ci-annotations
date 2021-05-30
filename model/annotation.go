@@ -1,5 +1,28 @@
 package model
 
+import "fmt"
+
+type AnnotationLevel int
+
+const (
+	LevelNotice AnnotationLevel = iota
+	LevelWarning
+	LevelFailure
+)
+
+func (al *AnnotationLevel) String() string {
+	switch *al {
+	case LevelNotice:
+		return "notice"
+	case LevelWarning:
+		return "warning"
+	case LevelFailure:
+		return "failure"
+	default:
+		panic(fmt.Sprintf("unhandled annotation level: %d", *al))
+	}
+}
+
 type FileLocation struct {
 	Path        string
 	StartLine   int64
@@ -10,7 +33,7 @@ type FileLocation struct {
 
 // mimics https://developer.github.com/v3/checks/runs/#annotations-object
 type Annotation struct {
-	Level              string
+	Level              AnnotationLevel
 	Message            string
 	RawDetails         string
 	Location           *FileLocation

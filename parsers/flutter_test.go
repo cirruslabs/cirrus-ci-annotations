@@ -20,7 +20,7 @@ func TestFlutterSucceeding(t *testing.T) {
 func TestFlutterFailing(t *testing.T) {
 	expected := []model.Annotation{
 		{
-			Level:      "failure",
+			Level:      model.LevelFailure,
 			Message:    "Counter value should start at 0",
 			RawDetails: "Expected: <0>\n  Actual: <1>\n",
 			Location: &model.FileLocation{
@@ -32,7 +32,7 @@ func TestFlutterFailing(t *testing.T) {
 			},
 		},
 		{
-			Level:      "failure",
+			Level:      model.LevelFailure,
 			Message:    "Counter value should be incremented",
 			RawDetails: "Expected: <1>\n  Actual: <2>\n",
 			Location: &model.FileLocation{
@@ -44,7 +44,7 @@ func TestFlutterFailing(t *testing.T) {
 			},
 		},
 		{
-			Level:   "failure",
+			Level:   model.LevelFailure,
 			Message: "Counter value should be decremented",
 			RawDetails: "Expected: <-1>\n  Actual: <0>\n",
 			Location: &model.FileLocation{

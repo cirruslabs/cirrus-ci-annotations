@@ -19,7 +19,7 @@ func Test_AndroidLint_Multiple_Locations(t *testing.T) {
 
 	firstAnnotation := annotations[0]
 	firstExpected := model.Annotation{
-		Level:              "warning",
+		Level:              model.LevelWarning,
 		Message:            "The resource `R.string.my_string` appears to be unused",
 		RawDetails:         "Unused resources make applications larger and slow down builds.\n\nThe unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.\n\nYou can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true.",
 		Location: &model.FileLocation{
@@ -37,7 +37,7 @@ func Test_AndroidLint_Multiple_Locations(t *testing.T) {
 
 	secondAnnotation := annotations[1]
 	secondExpected := model.Annotation{
-		Level:              "warning",
+		Level:              model.LevelWarning,
 		Message:            "The resource `R.string.my_string` appears to be unused",
 		RawDetails:         "Unused resources make applications larger and slow down builds.\n\nThe unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.\n\nYou can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true.",
 		Location: &model.FileLocation{
@@ -65,7 +65,7 @@ func Test_AndroidLint_Multiple_Issues(t *testing.T) {
 
 	firstAnnotation := annotations[0]
 	firstExpected := model.Annotation{
-		Level:              "fatal",
+		Level:              model.LevelFailure,
 		Message:            "The resource `R.string.my_string` appears to be unused",
 		RawDetails:         "Unused resources make applications larger and slow down builds.\n\nThe unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.\n\nYou can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true.",
 		Location: &model.FileLocation{
@@ -83,7 +83,7 @@ func Test_AndroidLint_Multiple_Issues(t *testing.T) {
 
 	secondAnnotation := annotations[1]
 	secondExpected := model.Annotation{
-		Level:              "fatal",
+		Level:              model.LevelFailure,
 		Message:            "The resource `R.string.my_string` appears to be unused",
 		RawDetails:         "Unused resources make applications larger and slow down builds.\n\nThe unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.\n\nYou can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true.",
 		Location: &model.FileLocation{
@@ -101,7 +101,7 @@ func Test_AndroidLint_Multiple_Issues(t *testing.T) {
 
 	thirdAnnotation := annotations[2]
 	thirdExpected := model.Annotation{
-		Level:              "notice",
+		Level:              model.LevelNotice,
 		Message:            "The resource `R.string.my_string` appears to be unused",
 		RawDetails:         "Unused resources make applications larger and slow down builds.\n\nThe unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.\n\nYou can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true.",
 		Location: &model.FileLocation{
