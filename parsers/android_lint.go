@@ -13,11 +13,11 @@ const supportedFormatVersion = 5
 // severityMapping maps Android Lint severity to Github's annotation level
 // https://android.googlesource.com/platform/tools/base/+/studio-master-dev/lint/libs/lint-api/src/main/java/com/android/tools/lint/detector/api/Severity.kt
 // we leave out the Ignore severity type as we don't want to report it
-var severityMapping = map[string]string{
-	"Fatal":       "fatal",
-	"Error":       "fatal",
-	"Warning":     "warning",
-	"Information": "notice",
+var severityMapping = map[string]model.AnnotationLevel{
+	"Fatal":       model.LevelFailure,
+	"Error":       model.LevelFailure,
+	"Warning":     model.LevelWarning,
+	"Information": model.LevelNotice,
 }
 
 type androidLintReport struct {
@@ -69,11 +69,9 @@ func ParseAndroidLintAnnotations(path string) (error, []model.Annotation) {
 		if found {
 			for _, location := range issue.Locations {
 				var parsedAnnotation = model.Annotation{
-					Type:               model.LintResultAnnotationType,
-					Level:              level,
-					FullyQualifiedName: issue.ID,
-					Message:            issue.Message,
-					RawDetails:         issue.Explanation,
+					Level:      level,
+					Message:    issue.Message,
+					RawDetails: issue.Explanation,
 					Location: &model.FileLocation{
 						Path:        location.Filename,
 						StartLine:   location.Line,

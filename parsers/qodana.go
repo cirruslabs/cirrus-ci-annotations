@@ -25,16 +25,16 @@ type qodanaReport struct {
 	ListProblem []qodanaProblem
 }
 
-func qodanaSeverityToAnnotationLevel(severity string) string {
+func qodanaSeverityToAnnotationLevel(severity string) model.AnnotationLevel {
 	switch strings.ToLower(severity) {
 	case "critical":
-		return "failure"
+		return model.LevelFailure
 	case "high":
 		fallthrough
 	case "moderate":
-		return "warning"
+		return model.LevelWarning
 	default:
-		return "notice"
+		return model.LevelNotice
 	}
 }
 

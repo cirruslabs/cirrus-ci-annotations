@@ -11,12 +11,12 @@ import (
 // annotation levels using RuboCop's SimpleTextFormatter colors[2] as a hint.
 // [1]: https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Severity
 // [2]: https://www.rubydoc.info/gems/rubocop/RuboCop/Formatter/SimpleTextFormatter#COLOR_FOR_SEVERITY-constant
-var rubocopSeverityMapping = map[string]string{
-	"refactor":   "notice",
-	"convention": "notice",
-	"warning":    "warning",
-	"error":      "failure",
-	"fatal":      "failure",
+var rubocopSeverityMapping = map[string]model.AnnotationLevel{
+	"refactor":   model.LevelNotice,
+	"convention": model.LevelNotice,
+	"warning":    model.LevelWarning,
+	"error":      model.LevelFailure,
+	"fatal":      model.LevelFailure,
 }
 
 type rubocopLocation struct {
@@ -60,7 +60,7 @@ func ParseRuboCopAnnotations(path string) (error, []model.Annotation) {
 	result := make([]model.Annotation, 0)
 
 	for _, file := range report.Files {
-		for offenseNumber, offense := range file.Offenses {
+		for _, offense := range file.Offenses {
 			// Map RuboCop's severity to GitHub's annotation level,
 			// skipping unknown severities.
 			level, found := rubocopSeverityMapping[offense.Severity]
@@ -70,17 +70,12 @@ func ParseRuboCopAnnotations(path string) (error, []model.Annotation) {
 
 			// No matter the severity, corrected offenses get demoted to "notice" level
 			if offense.Corrected {
-				level = "notice"
+				level = model.LevelNotice
 			}
 
-			// RuboCop does not provide a FQN, so we craft one ourselves
-			fqn := fmt.Sprintf("%s-%d", file.Path, offenseNumber)
-
 			var parsedAnnotation = model.Annotation{
-				Type:               model.LintResultAnnotationType,
-				Level:              level,
-				Message:            fmt.Sprintf("%s: %s", offense.CopName, offense.Message),
-				FullyQualifiedName: fqn,
+				Level:   level,
+				Message: fmt.Sprintf("%s: %s", offense.CopName, offense.Message),
 				Location: &model.FileLocation{
 					Path:        file.Path,
 					StartLine:   offense.Location.Line,

@@ -26,7 +26,6 @@ type flutterEntry struct {
 
 func annotationFromTest(test *flutterTest) *model.Annotation {
 	return &model.Annotation{
-		Type:    model.TestResultAnnotationType,
 		Message: test.Name,
 		Location: &model.FileLocation{
 			Path:        strings.TrimPrefix(test.URL, "file://"),
@@ -72,7 +71,7 @@ func ParseFlutterAnnotations(path string) (error, []model.Annotation) {
 		case "testDone":
 			if entry.Result != "success" {
 				if annotation, ok := runningTests[entry.TestID]; ok {
-					annotation.Level = "failure"
+					annotation.Level = model.LevelFailure
 					result = append(result, *annotation)
 					delete(runningTests, entry.TestID)
 				}

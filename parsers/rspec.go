@@ -47,26 +47,25 @@ func ParseRSpecAnnotations(path string) (error, []model.Annotation) {
 	result := make([]model.Annotation, 0)
 
 	for _, example := range report.Examples {
-		var level, rawDetails string
+		var level model.AnnotationLevel
+		var rawDetails string
 
 		// Skip "passed" (which only adds noise) and deal with the rest of the states
 		switch example.Status {
 		case "pending":
-			level = "notice"
+			level = model.LevelNotice
 			rawDetails = example.PendingMessage
 		case "failed":
-			level = "failure"
+			level = model.LevelFailure
 			rawDetails = example.Exception.Message
 		default:
 			continue
 		}
 
 		var parsedAnnotation = model.Annotation{
-			Type:               model.TestResultAnnotationType,
-			Level:              level,
-			Message:            example.FullDescription,
-			RawDetails:         rawDetails,
-			FullyQualifiedName: example.ID,
+			Level:      level,
+			Message:    example.FullDescription,
+			RawDetails: rawDetails,
 			Location: &model.FileLocation{
 				Path:      filepath.Clean(example.FilePath),
 				StartLine: example.LineNumber,

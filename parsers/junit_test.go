@@ -18,11 +18,9 @@ func Test_JunitJava(t *testing.T) {
 	annotation := annotations[0]
 	annotation.RawDetails = ""
 	expected := model.Annotation{
-		Type:               model.TestResultAnnotationType,
-		Level:              "failure",
-		Message:            "LibraryTest.testSomeLibraryMethod",
-		FullyQualifiedName: "LibraryTest.testSomeLibraryMethod",
-		RawDetails:         "",
+		Level:      model.LevelFailure,
+		Message:    "LibraryTest.testSomeLibraryMethod",
+		RawDetails: "",
 		Location: &model.FileLocation{
 			Path:      "LibraryTest.java",
 			StartLine: 10,
@@ -46,11 +44,9 @@ func Test_JunitKotlin(t *testing.T) {
 	annotation := annotations[0]
 	annotation.RawDetails = ""
 	expected := model.Annotation{
-		Type:               model.TestResultAnnotationType,
-		Level:              "failure",
-		Message:            "com.fkorotkov.kubernetes.SimpleCompilationTest.testService",
-		FullyQualifiedName: "com.fkorotkov.kubernetes.SimpleCompilationTest.testService",
-		RawDetails:         "",
+		Level:      model.LevelFailure,
+		Message:    "com.fkorotkov.kubernetes.SimpleCompilationTest.testService",
+		RawDetails: "",
 		Location: &model.FileLocation{
 			Path:      "SimpleCompilationTest.kt",
 			StartLine: 41,
@@ -74,11 +70,9 @@ func Test_PythonXMLRunner(t *testing.T) {
 	annotation := annotations[0]
 	annotation.RawDetails = ""
 	expected := model.Annotation{
-		Type:               model.TestResultAnnotationType,
-		Level:              "failure",
-		Message:            "tests.Tests.test_utilities",
-		FullyQualifiedName: "tests.Tests.test_utilities",
-		RawDetails:         "",
+		Level:      model.LevelFailure,
+		Message:    "tests.Tests.test_utilities",
+		RawDetails: "",
 		Location: &model.FileLocation{
 			Path:      "tests.py",
 			StartLine: 70,
