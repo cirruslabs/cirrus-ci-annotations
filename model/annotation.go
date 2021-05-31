@@ -1,8 +1,17 @@
 package model
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 type AnnotationLevel int
+
+const (
+	literalNotice  = "notice"
+	literalWarning = "warning"
+	literalFailure = "failure"
+)
 
 const (
 	LevelNotice AnnotationLevel = iota
@@ -13,28 +22,49 @@ const (
 func (al *AnnotationLevel) String() string {
 	switch *al {
 	case LevelNotice:
-		return "notice"
+		return literalNotice
 	case LevelWarning:
-		return "warning"
+		return literalWarning
 	case LevelFailure:
-		return "failure"
+		return literalFailure
 	default:
 		panic(fmt.Sprintf("unhandled annotation level: %d", *al))
 	}
 }
 
+func (al *AnnotationLevel) UnmarshalJSON(data []byte) error {
+	var value string
+
+	if err := json.Unmarshal(data, &value); err != nil {
+		return err
+	}
+
+	switch value {
+	case literalNotice:
+		*al = LevelNotice
+	case literalWarning:
+		*al = LevelWarning
+	case literalFailure:
+		*al = LevelFailure
+	default:
+		return fmt.Errorf("unsupported annotation level: %q", value)
+	}
+
+	return nil
+}
+
 type FileLocation struct {
-	Path        string
-	StartLine   int64
-	EndLine     int64
-	StartColumn int64
-	EndColumn   int64
+	Path        string `json:"path"`
+	StartLine   int64  `json:"start_line"`
+	EndLine     int64  `json:"end_line"`
+	StartColumn int64  `json:"start_column"`
+	EndColumn   int64  `json:"end_column"`
 }
 
 // mimics https://developer.github.com/v3/checks/runs/#annotations-object
 type Annotation struct {
-	Level      AnnotationLevel
-	Message    string
-	RawDetails string
-	Location   *FileLocation
+	Level      AnnotationLevel `json:"level"`
+	Message    string          `json:"message"`
+	RawDetails string          `json:"raw_details"`
+	Location   *FileLocation   `json:"location"`
 }

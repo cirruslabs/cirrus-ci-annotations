@@ -27,6 +27,8 @@ func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 		return parsers.ParseXclogparserAnnotations(path)
 	case "flutter":
 		return parsers.ParseFlutterAnnotations(path)
+	case "cirrus":
+		return parsers.ParseCirrusAnnotations(path)
 	default:
 		return nil, make([]model.Annotation, 0)
 	}
