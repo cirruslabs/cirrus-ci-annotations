@@ -27,6 +27,8 @@ func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 		return parsers.ParseXclogparserAnnotations(path)
 	case "flutter":
 		return parsers.ParseFlutterAnnotations(path)
+	case "cirrus":
+		return parsers.ParseCirrusAnnotations(path)
 	default:
 		return nil, make([]model.Annotation, 0)
 	}
@@ -47,11 +49,7 @@ func ValidateAnnotations(workDirPath string, annotations []model.Annotation) err
 	}
 
 	for _, annotation := range annotations {
-		location := annotation.Location
-		if location == nil {
-			continue
-		}
-		path := location.Path
+		path := annotation.Path
 		if filepath.IsAbs(path) {
 			path, _ = filepath.Rel(workDirPath, path)
 		}
@@ -59,7 +57,7 @@ func ValidateAnnotations(workDirPath string, annotations []model.Annotation) err
 			path = fileIndex[filepath.Base(path)]
 		}
 		if path != "" {
-			location.Path = path
+			annotation.Path = path
 		}
 	}
 	return nil

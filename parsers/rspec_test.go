@@ -37,21 +37,17 @@ func Test_RSpec_MultipleStates(t *testing.T) {
 			Level:      model.LevelNotice,
 			Message:    "Dummy gets skipped",
 			RawDetails: "not implemented yet",
-			Location: &model.FileLocation{
-				Path:      "spec/dummy_spec.rb",
-				StartLine: 11,
-				EndLine:   11,
-			},
+			Path:       "spec/dummy_spec.rb",
+			StartLine:  11,
+			EndLine:    11,
 		},
 		{
 			Level:      model.LevelFailure,
 			Message:    "Dummy fails",
 			RawDetails: "\nexpected: 2\n     got: 1\n\n(compared using ==)\n",
-			Location: &model.FileLocation{
-				Path:      "spec/dummy_spec.rb",
-				StartLine: 16,
-				EndLine:   16,
-			},
+			Path:       "spec/dummy_spec.rb",
+			StartLine:  16,
+			EndLine:    16,
 		},
 	}
 

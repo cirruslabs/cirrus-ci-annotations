@@ -1,16 +1,15 @@
 package util
 
 import (
-	"github.com/cirruslabs/cirrus-ci-annotations/model"
 	"regexp"
 	"strconv"
 	"strings"
 )
 
-func GuessLocationIgnored(data string, ignorePatters []string) *model.FileLocation {
+func GuessLocationIgnored(data string, ignorePatters []string) (string, int64, int64) {
 	regex, err := regexp.Compile(`([\w\\.]+):(\d+)`)
 	if err != nil {
-		return nil
+		return "", 0, 0
 	}
 	lines := strings.Split(data, "\n")
 LinesLoop:
@@ -29,11 +28,7 @@ LinesLoop:
 		if err != nil {
 			continue
 		}
-		return &model.FileLocation{
-			Path:      parts[0],
-			StartLine: lineNumber,
-			EndLine:   lineNumber,
-		}
+		return parts[0], lineNumber, lineNumber
 	}
-	return nil
+	return "", 0, 0
 }

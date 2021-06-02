@@ -26,14 +26,12 @@ type flutterEntry struct {
 
 func annotationFromTest(test *flutterTest) *model.Annotation {
 	return &model.Annotation{
-		Message: test.Name,
-		Location: &model.FileLocation{
-			Path:        strings.TrimPrefix(test.URL, "file://"),
-			StartLine:   test.Line,
-			EndLine:     test.Line,
-			StartColumn: test.Column,
-			EndColumn:   test.Column,
-		},
+		Message:     test.Name,
+		Path:        strings.TrimPrefix(test.URL, "file://"),
+		StartLine:   test.Line,
+		EndLine:     test.Line,
+		StartColumn: test.Column,
+		EndColumn:   test.Column,
 	}
 }
 

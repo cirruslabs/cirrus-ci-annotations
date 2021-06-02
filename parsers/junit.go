@@ -25,27 +25,29 @@ func ParseJUnitAnnotations(path string) (error, []model.Annotation) {
 					Message: fqn,
 				}
 			case junit.StatusFailed:
+				path, startLine, endLine := util.GuessLocationIgnored(
+					test.Error.Error(),
+					[]string{
+						"junit",
+						"kotlin",
+					},
+				)
+
 				parsedAnnotation = model.Annotation{
 					Level:      model.LevelFailure,
 					Message:    fqn,
 					RawDetails: test.Error.Error(),
-					Location: util.GuessLocationIgnored(
-						test.Error.Error(),
-						[]string{
-							"junit",
-							"kotlin",
-						},
-					),
+					Path:       path,
+					StartLine:  startLine,
+					EndLine:    endLine,
 				}
 			}
 
 			if test.Properties["file"] != "" {
 				line, _ := strconv.Atoi(test.Properties["line"])
-				parsedAnnotation.Location = &model.FileLocation{
-					Path:      test.Properties["file"],
-					StartLine: int64(line),
-					EndLine:   int64(line),
-				}
+				parsedAnnotation.Path = test.Properties["file"]
+				parsedAnnotation.StartLine = int64(line)
+				parsedAnnotation.EndLine = int64(line)
 			}
 
 			result = append(

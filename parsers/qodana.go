@@ -55,16 +55,14 @@ func ParseQodanaAnnotations(path string) (error, []model.Annotation) {
 	for _, problem := range report.ListProblem {
 		for _, source := range problem.Sources {
 			var parsedAnnotation = model.Annotation{
-				Level:      qodanaSeverityToAnnotationLevel(problem.Severity),
-				Message:    problem.Comment,
-				RawDetails: problem.DetailsInfo,
-				Location: &model.FileLocation{
-					Path:        source.Path,
-					StartLine:   source.Line,
-					EndLine:     source.Line,
-					StartColumn: source.Offset,
-					EndColumn:   source.Offset,
-				},
+				Level:       qodanaSeverityToAnnotationLevel(problem.Severity),
+				Message:     problem.Comment,
+				RawDetails:  problem.DetailsInfo,
+				Path:        source.Path,
+				StartLine:   source.Line,
+				EndLine:     source.Line,
+				StartColumn: source.Offset,
+				EndColumn:   source.Offset,
 			}
 
 			result = append(result, parsedAnnotation)
