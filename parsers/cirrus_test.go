@@ -25,6 +25,16 @@ func TestParseCirrusAnnotations(t *testing.T) {
 			StartColumn: 5,
 			EndColumn:   5,
 		},
+		{
+			Level:       model.LevelNotice,
+			Message:     "some message",
+			RawDetails:  "some lengthy details",
+			Path:        "cmd/main.go",
+			StartLine:   3,
+			EndLine:     3,
+			StartColumn: 4,
+			EndColumn:   4,
+		},
 	}
 
 	assert.Equal(t, expected, annotations)

@@ -2,17 +2,9 @@ package parsers
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/cirruslabs/cirrus-ci-annotations/model"
 	"os"
 )
-
-const currentReportVersion = "1"
-
-type cirrusReport struct {
-	Version     string             `json:"version"`
-	Annotations []model.Annotation `json:"annotations"`
-}
 
 func ParseCirrusAnnotations(path string) (error, []model.Annotation) {
 	reportFile, err := os.Open(path)
@@ -21,23 +13,19 @@ func ParseCirrusAnnotations(path string) (error, []model.Annotation) {
 	}
 	defer reportFile.Close()
 
+	var annotations []model.Annotation
+
 	decoder := json.NewDecoder(reportFile)
 
-	var report cirrusReport
+	for decoder.More() {
+		var annotation model.Annotation
 
-	if err := decoder.Decode(&report); err != nil {
-		return err, nil
+		if err := decoder.Decode(&annotation); err != nil {
+			return err, nil
+		}
+
+		annotations = append(annotations, annotation)
 	}
 
-	// Hard version checks for easy backwards compatibility in the future
-	if report.Version == "" {
-		return fmt.Errorf("you should specify a report's version, currently supported version is %q",
-			currentReportVersion), nil
-	}
-	if report.Version != currentReportVersion {
-		return fmt.Errorf("unsupported report version %q, currently only version %q is supported",
-			report.Version, currentReportVersion), nil
-	}
-
-	return nil, report.Annotations
+	return nil, annotations
 }
