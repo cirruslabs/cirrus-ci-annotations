@@ -5,13 +5,11 @@
       "level": "failure",
       "message": "some message",
       "raw_details": "some lengthy details",
-      "location": {
-        "path": "main.go",
-        "start_line": 10,
-        "end_line": 10,
-        "start_column": 5,
-        "end_column": 5
-      }
+      "path": "main.go",
+      "start_line": 10,
+      "end_line": 10,
+      "start_column": 5,
+      "end_column": 5
     }
   ]
 }

@@ -16,13 +16,11 @@ func TestXclogparser(t *testing.T) {
 			RawDetails: `/var/folders/sr/b58hwhtj0jbcf4r09zmg0wlc0000gn/T/cirrus-ci-build/noapp/main.swift:3:1: error: cannot find 'printeh' in scope
 printeh("Hello, World!")
 ^~~~~~~`,
-			Location: &model.FileLocation{
-				Path:        "/var/folders/sr/b58hwhtj0jbcf4r09zmg0wlc0000gn/T/cirrus-ci-build/noapp/main.swift",
-				StartLine:   3,
-				EndLine:     3,
-				StartColumn: 1,
-				EndColumn:   1,
-			},
+			Path:        "/var/folders/sr/b58hwhtj0jbcf4r09zmg0wlc0000gn/T/cirrus-ci-build/noapp/main.swift",
+			StartLine:   3,
+			EndLine:     3,
+			StartColumn: 1,
+			EndColumn:   1,
 		},
 	}
 

@@ -49,11 +49,7 @@ func ValidateAnnotations(workDirPath string, annotations []model.Annotation) err
 	}
 
 	for _, annotation := range annotations {
-		location := annotation.Location
-		if location == nil {
-			continue
-		}
-		path := location.Path
+		path := annotation.Path
 		if filepath.IsAbs(path) {
 			path, _ = filepath.Rel(workDirPath, path)
 		}
@@ -61,7 +57,7 @@ func ValidateAnnotations(workDirPath string, annotations []model.Annotation) err
 			path = fileIndex[filepath.Base(path)]
 		}
 		if path != "" {
-			location.Path = path
+			annotation.Path = path
 		}
 	}
 	return nil

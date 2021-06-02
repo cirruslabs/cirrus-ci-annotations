@@ -16,16 +16,14 @@ func TestParseCirrusAnnotations(t *testing.T) {
 
 	expected := []model.Annotation{
 		{
-			Level:      model.LevelFailure,
-			Message:    "some message",
-			RawDetails: "some lengthy details",
-			Location: &model.FileLocation{
-				Path:        "main.go",
-				StartLine:   10,
-				EndLine:     10,
-				StartColumn: 5,
-				EndColumn:   5,
-			},
+			Level:       model.LevelFailure,
+			Message:     "some message",
+			RawDetails:  "some lengthy details",
+			Path:        "main.go",
+			StartLine:   10,
+			EndLine:     10,
+			StartColumn: 5,
+			EndColumn:   5,
 		},
 	}
 

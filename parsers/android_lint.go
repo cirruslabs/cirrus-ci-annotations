@@ -69,16 +69,14 @@ func ParseAndroidLintAnnotations(path string) (error, []model.Annotation) {
 		if found {
 			for _, location := range issue.Locations {
 				var parsedAnnotation = model.Annotation{
-					Level:      level,
-					Message:    issue.Message,
-					RawDetails: issue.Explanation,
-					Location: &model.FileLocation{
-						Path:        location.Filename,
-						StartLine:   location.Line,
-						EndLine:     location.Line,
-						StartColumn: location.Column,
-						EndColumn:   location.Column,
-					},
+					Level:       level,
+					Message:     issue.Message,
+					RawDetails:  issue.Explanation,
+					Path:        location.Filename,
+					StartLine:   location.Line,
+					EndLine:     location.Line,
+					StartColumn: location.Column,
+					EndColumn:   location.Column,
 				}
 
 				result = append(

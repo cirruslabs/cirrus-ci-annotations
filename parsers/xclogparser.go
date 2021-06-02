@@ -25,16 +25,14 @@ type xclogparserReport struct {
 
 func (entry *xclogparserEntry) ToAnnotation(level model.AnnotationLevel) model.Annotation {
 	return model.Annotation{
-		Level:      level,
-		Message:    entry.Title,
-		RawDetails: entry.Detail,
-		Location: &model.FileLocation{
-			Path:        strings.TrimPrefix(entry.DocumentURL, "file://"),
-			StartLine:   entry.StartingLineNumber,
-			EndLine:     entry.EndingLineNumber,
-			StartColumn: entry.StartingColumnNumber,
-			EndColumn:   entry.EndingColumnNumber,
-		},
+		Level:       level,
+		Message:     entry.Title,
+		RawDetails:  entry.Detail,
+		Path:        strings.TrimPrefix(entry.DocumentURL, "file://"),
+		StartLine:   entry.StartingLineNumber,
+		EndLine:     entry.EndingLineNumber,
+		StartColumn: entry.StartingColumnNumber,
+		EndColumn:   entry.EndingColumnNumber,
 	}
 }
 

@@ -18,13 +18,11 @@ func TestQodana(t *testing.T) {
 Allows you to see problems reported by language annotators in the results of batch code inspection.
 </body>
 </html>`,
-			Location: &model.FileLocation{
-				Path:        "build.gradle",
-				StartLine:   37,
-				EndLine:     37,
-				StartColumn: 16,
-				EndColumn:   16,
-			},
+			Path:        "build.gradle",
+			StartLine:   37,
+			EndLine:     37,
+			StartColumn: 16,
+			EndColumn:   16,
 		},
 		{
 			Level:   model.LevelFailure,
@@ -34,13 +32,11 @@ Allows you to see problems reported by language annotators in the results of bat
 Allows you to see problems reported by language annotators in the results of batch code inspection.
 </body>
 </html>`,
-			Location: &model.FileLocation{
-				Path:        "settings.gradle",
-				StartLine:   3,
-				EndLine:     3,
-				StartColumn: 24,
-				EndColumn:   24,
-			},
+			Path:        "settings.gradle",
+			StartLine:   3,
+			EndLine:     3,
+			StartColumn: 24,
+			EndColumn:   24,
 		},
 		{
 			Level:   model.LevelFailure,
@@ -50,13 +46,11 @@ Allows you to see problems reported by language annotators in the results of bat
 Allows you to see problems reported by language annotators in the results of batch code inspection.
 </body>
 </html>`,
-			Location: &model.FileLocation{
-				Path:        "settings.gradle",
-				StartLine:   4,
-				EndLine:     4,
-				StartColumn: 24,
-				EndColumn:   24,
-			},
+			Path:        "settings.gradle",
+			StartLine:   4,
+			EndLine:     4,
+			StartColumn: 24,
+			EndColumn:   24,
 		},
 		{
 			Level:   model.LevelFailure,
@@ -66,13 +60,11 @@ Allows you to see problems reported by language annotators in the results of bat
 Allows you to see problems reported by language annotators in the results of batch code inspection.
 </body>
 </html>`,
-			Location: &model.FileLocation{
-				Path:        "settings.gradle",
-				StartLine:   5,
-				EndLine:     5,
-				StartColumn: 24,
-				EndColumn:   24,
-			},
+			Path:        "settings.gradle",
+			StartLine:   5,
+			EndLine:     5,
+			StartColumn: 24,
+			EndColumn:   24,
 		},
 		{
 			Level:   model.LevelWarning,
@@ -83,13 +75,11 @@ This inspection reports that different IDE and Gradle plugin versions are used.
 This can cause inconsistencies between IDE and Gradle builds in error reporting or code behaviour.
 </body>
 </html>`,
-			Location: &model.FileLocation{
-				Path:        "build.gradle",
-				StartLine:   11,
-				EndLine:     11,
-				StartColumn: 4,
-				EndColumn:   4,
-			},
+			Path:        "build.gradle",
+			StartLine:   11,
+			EndLine:     11,
+			StartColumn: 4,
+			EndColumn:   4,
 		},
 	}
 

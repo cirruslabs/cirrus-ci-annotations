@@ -66,11 +66,9 @@ func ParseRSpecAnnotations(path string) (error, []model.Annotation) {
 			Level:      level,
 			Message:    example.FullDescription,
 			RawDetails: rawDetails,
-			Location: &model.FileLocation{
-				Path:      filepath.Clean(example.FilePath),
-				StartLine: example.LineNumber,
-				EndLine:   example.LineNumber,
-			},
+			Path:       filepath.Clean(example.FilePath),
+			StartLine:  example.LineNumber,
+			EndLine:    example.LineNumber,
 		}
 
 		result = append(result, parsedAnnotation)

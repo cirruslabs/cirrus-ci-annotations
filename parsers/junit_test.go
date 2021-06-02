@@ -21,11 +21,9 @@ func Test_JunitJava(t *testing.T) {
 		Level:      model.LevelFailure,
 		Message:    "LibraryTest.testSomeLibraryMethod",
 		RawDetails: "",
-		Location: &model.FileLocation{
-			Path:      "LibraryTest.java",
-			StartLine: 10,
-			EndLine:   10,
-		},
+		Path:       "LibraryTest.java",
+		StartLine:  10,
+		EndLine:    10,
 	}
 
 	if diff := deep.Equal(expected, annotation); diff != nil {
@@ -47,11 +45,9 @@ func Test_JunitKotlin(t *testing.T) {
 		Level:      model.LevelFailure,
 		Message:    "com.fkorotkov.kubernetes.SimpleCompilationTest.testService",
 		RawDetails: "",
-		Location: &model.FileLocation{
-			Path:      "SimpleCompilationTest.kt",
-			StartLine: 41,
-			EndLine:   41,
-		},
+		Path:       "SimpleCompilationTest.kt",
+		StartLine:  41,
+		EndLine:    41,
 	}
 
 	if diff := deep.Equal(expected, annotation); diff != nil {
@@ -73,11 +69,9 @@ func Test_PythonXMLRunner(t *testing.T) {
 		Level:      model.LevelFailure,
 		Message:    "tests.Tests.test_utilities",
 		RawDetails: "",
-		Location: &model.FileLocation{
-			Path:      "tests.py",
-			StartLine: 70,
-			EndLine:   70,
-		},
+		Path:       "tests.py",
+		StartLine:  70,
+		EndLine:    70,
 	}
 
 	if diff := deep.Equal(expected, annotation); diff != nil {

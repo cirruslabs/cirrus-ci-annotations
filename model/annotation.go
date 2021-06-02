@@ -53,18 +53,15 @@ func (al *AnnotationLevel) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-type FileLocation struct {
-	Path        string `json:"path"`
-	StartLine   int64  `json:"start_line"`
-	EndLine     int64  `json:"end_line"`
-	StartColumn int64  `json:"start_column"`
-	EndColumn   int64  `json:"end_column"`
-}
-
 // mimics https://developer.github.com/v3/checks/runs/#annotations-object
 type Annotation struct {
 	Level      AnnotationLevel `json:"level"`
 	Message    string          `json:"message"`
 	RawDetails string          `json:"raw_details"`
-	Location   *FileLocation   `json:"location"`
+
+	Path        string `json:"path"`
+	StartLine   int64  `json:"start_line"`
+	EndLine     int64  `json:"end_line"`
+	StartColumn int64  `json:"start_column"`
+	EndColumn   int64  `json:"end_column"`
 }
