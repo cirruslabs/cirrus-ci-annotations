@@ -8,7 +8,7 @@ import (
 	"github.com/cirruslabs/cirrus-ci-annotations/model"
 )
 
-const supportedFormatVersion = 5
+const supportedFormatVersion = 6
 
 // severityMapping maps Android Lint severity to Github's annotation level
 // https://android.googlesource.com/platform/tools/base/+/studio-master-dev/lint/libs/lint-api/src/main/java/com/android/tools/lint/detector/api/Severity.kt
@@ -56,8 +56,8 @@ func ParseAndroidLintAnnotations(path string) (error, []model.Annotation) {
 		return err, nil
 	}
 
-	if report.Format != supportedFormatVersion {
-		return fmt.Errorf("Unsupported report version %d. Supported version is %d", report.Format, supportedFormatVersion), nil
+	if report.Format > supportedFormatVersion {
+		return fmt.Errorf("Unsupported report version %d. Maximum supported version is %d", report.Format, supportedFormatVersion), nil
 	}
 
 	result := make([]model.Annotation, 0)
