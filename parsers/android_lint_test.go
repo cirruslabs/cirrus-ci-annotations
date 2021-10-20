@@ -1,6 +1,8 @@
 package parsers
 
 import (
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 	"path/filepath"
 	"testing"
 
@@ -116,4 +118,23 @@ func Test_AndroidLint_Ignored_Issue(t *testing.T) {
 	if len(annotations) != 0 {
 		t.Errorf("Wrong amount of annotations: %v", len(annotations))
 	}
+}
+
+func TestFormat6(t *testing.T) {
+	expected := []model.Annotation{
+		{
+			Level:       model.LevelWarning,
+			Message:     "A newer version of com.android.tools.build:gradle than 3.5.0 is available: 7.0.3. (There is also a newer version of 3.5.𝑥 available, if upgrading to 7.0.3 is difficult: 3.5.4)",
+			RawDetails:  "This detector looks for usage of the Android Gradle Plugin where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.",
+			Path:        "/tmp/cirrus-ci-build/packages/connectivity/connectivity/android/build.gradle",
+			StartLine:   12,
+			EndLine:     12,
+			StartColumn: 9,
+			EndColumn:   9,
+		},
+	}
+
+	err, actual := ParseAndroidLintAnnotations(filepath.Join("..", "testdata", "android-lint", "lint-format-6.xml"))
+	require.NoError(t, err)
+	assert.Equal(t, expected, actual)
 }
