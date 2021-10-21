@@ -18,7 +18,7 @@ func TestFlutterSucceeding(t *testing.T) {
 }
 
 func TestFlutterFailing(t *testing.T) {
-	expected := []*model.Annotation{
+	expected := []model.Annotation{
 		{
 			Level:       model.LevelFailure,
 			Message:     "Counter value should start at 0",

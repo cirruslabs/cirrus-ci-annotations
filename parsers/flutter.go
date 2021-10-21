@@ -35,7 +35,7 @@ func annotationFromTest(test *flutterTest) *model.Annotation {
 	}
 }
 
-func ParseFlutterAnnotations(path string) (error, []*model.Annotation) {
+func ParseFlutterAnnotations(path string) (error, []model.Annotation) {
 	file, err := os.Open(path)
 	if err != nil {
 		return err, nil
@@ -43,8 +43,7 @@ func ParseFlutterAnnotations(path string) (error, []*model.Annotation) {
 
 	decoder := json.NewDecoder(file)
 	runningTests := map[int64]*model.Annotation{}
-
-	var result []*model.Annotation
+	result := make([]model.Annotation, 0)
 
 	for {
 		var entry flutterEntry
@@ -71,7 +70,7 @@ func ParseFlutterAnnotations(path string) (error, []*model.Annotation) {
 			if entry.Result != "success" {
 				if annotation, ok := runningTests[entry.TestID]; ok {
 					annotation.Level = model.LevelFailure
-					result = append(result, annotation)
+					result = append(result, *annotation)
 					delete(runningTests, entry.TestID)
 				}
 			}

@@ -32,7 +32,7 @@ type rspecReport struct {
 // ParseRSpecAnnotations parses RSpec's JSON output into annotations according to the "spec" ranged from 3.0.0[1] to 3.9.2[2].
 // [1]: https://github.com/rspec/rspec-core/blob/v3.0.0/lib/rspec/core/example.rb
 // [2]: https://github.com/rspec/rspec-core/blob/v3.9.2/lib/rspec/core/example.rb
-func ParseRSpecAnnotations(path string) (error, []*model.Annotation) {
+func ParseRSpecAnnotations(path string) (error, []model.Annotation) {
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
 		return err, nil
@@ -44,7 +44,7 @@ func ParseRSpecAnnotations(path string) (error, []*model.Annotation) {
 		return err, nil
 	}
 
-	var result []*model.Annotation
+	result := make([]model.Annotation, 0)
 
 	for _, example := range report.Examples {
 		var level model.AnnotationLevel
@@ -71,7 +71,7 @@ func ParseRSpecAnnotations(path string) (error, []*model.Annotation) {
 			EndLine:    example.LineNumber,
 		}
 
-		result = append(result, &parsedAnnotation)
+		result = append(result, parsedAnnotation)
 	}
 
 	return nil, result

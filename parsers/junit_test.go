@@ -17,7 +17,7 @@ func Test_JunitJava(t *testing.T) {
 	}
 	annotation := annotations[0]
 	annotation.RawDetails = ""
-	expected := &model.Annotation{
+	expected := model.Annotation{
 		Level:      model.LevelFailure,
 		Message:    "LibraryTest.testSomeLibraryMethod",
 		RawDetails: "",
@@ -41,7 +41,7 @@ func Test_JunitKotlin(t *testing.T) {
 	}
 	annotation := annotations[0]
 	annotation.RawDetails = ""
-	expected := &model.Annotation{
+	expected := model.Annotation{
 		Level:      model.LevelFailure,
 		Message:    "com.fkorotkov.kubernetes.SimpleCompilationTest.testService",
 		RawDetails: "",
@@ -65,7 +65,7 @@ func Test_PythonXMLRunner(t *testing.T) {
 	}
 	annotation := annotations[0]
 	annotation.RawDetails = ""
-	expected := &model.Annotation{
+	expected := model.Annotation{
 		Level:      model.LevelFailure,
 		Message:    "tests.Tests.test_utilities",
 		RawDetails: "",

@@ -45,7 +45,7 @@ type location struct {
 	Column   int64    `xml:"column,attr"`
 }
 
-func ParseAndroidLintAnnotations(path string) (error, []*model.Annotation) {
+func ParseAndroidLintAnnotations(path string) (error, []model.Annotation) {
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
 		return err, nil
@@ -60,8 +60,7 @@ func ParseAndroidLintAnnotations(path string) (error, []*model.Annotation) {
 		return fmt.Errorf("Unsupported report version %d. Maximum supported version is %d", report.Format, supportedFormatVersion), nil
 	}
 
-	var result []*model.Annotation
-
+	result := make([]model.Annotation, 0)
 	for _, issue := range report.Issues {
 
 		// we skip the Ignore severity as there is no mapping for it
@@ -80,10 +79,12 @@ func ParseAndroidLintAnnotations(path string) (error, []*model.Annotation) {
 					EndColumn:   location.Column,
 				}
 
-				result = append(result, &parsedAnnotation)
+				result = append(
+					result,
+					parsedAnnotation,
+				)
 			}
 		}
 	}
-
 	return nil, result
 }

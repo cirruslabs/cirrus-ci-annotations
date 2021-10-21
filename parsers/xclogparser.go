@@ -23,8 +23,8 @@ type xclogparserReport struct {
 	Notes    []xclogparserEntry
 }
 
-func (entry *xclogparserEntry) ToAnnotation(level model.AnnotationLevel) *model.Annotation {
-	return &model.Annotation{
+func (entry *xclogparserEntry) ToAnnotation(level model.AnnotationLevel) model.Annotation {
+	return model.Annotation{
 		Level:       level,
 		Message:     entry.Title,
 		RawDetails:  entry.Detail,
@@ -36,7 +36,7 @@ func (entry *xclogparserEntry) ToAnnotation(level model.AnnotationLevel) *model.
 	}
 }
 
-func ParseXclogparserAnnotations(path string) (error, []*model.Annotation) {
+func ParseXclogparserAnnotations(path string) (error, []model.Annotation) {
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
 		return err, nil
@@ -48,7 +48,7 @@ func ParseXclogparserAnnotations(path string) (error, []*model.Annotation) {
 		return err, nil
 	}
 
-	var result []*model.Annotation
+	result := make([]model.Annotation, 0)
 
 	for _, report := range reports {
 		for _, reportError := range report.Errors {

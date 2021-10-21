@@ -8,14 +8,12 @@ import (
 	"strconv"
 )
 
-func ParseJUnitAnnotations(path string) (error, []*model.Annotation) {
+func ParseJUnitAnnotations(path string) (error, []model.Annotation) {
 	suites, err := junit.IngestFile(path)
 	if err != nil {
 		return err, nil
 	}
-
-	var result []*model.Annotation
-
+	result := make([]model.Annotation, 0)
 	for _, suite := range suites {
 		for _, test := range suite.Tests {
 			fqn := fmt.Sprintf("%s.%s", test.Classname, test.Name)
@@ -52,9 +50,11 @@ func ParseJUnitAnnotations(path string) (error, []*model.Annotation) {
 				parsedAnnotation.EndLine = int64(line)
 			}
 
-			result = append(result, &parsedAnnotation)
+			result = append(
+				result,
+				parsedAnnotation,
+			)
 		}
 	}
-
 	return nil, result
 }

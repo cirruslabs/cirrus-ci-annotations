@@ -9,7 +9,7 @@ import (
 	"github.com/cirruslabs/cirrus-ci-annotations/parsers"
 )
 
-func ParseAnnotations(format string, path string) (error, []*model.Annotation) {
+func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 	switch strings.ToLower(format) {
 	case "junit":
 		return parsers.ParseJUnitAnnotations(path)
@@ -30,12 +30,12 @@ func ParseAnnotations(format string, path string) (error, []*model.Annotation) {
 	case "cirrus":
 		return parsers.ParseCirrusAnnotations(path)
 	default:
-		return nil, []*model.Annotation{}
+		return nil, make([]model.Annotation, 0)
 	}
 }
 
 // Makes sure that locations has validate relative to workDirPath path
-func ValidateAnnotations(workDirPath string, annotations []*model.Annotation) error {
+func ValidateAnnotations(workDirPath string, annotations []model.Annotation) error {
 	fileIndex := make(map[string]string)
 	err := filepath.Walk(workDirPath, func(path string, info os.FileInfo, err error) error {
 		if info != nil && !info.IsDir() {

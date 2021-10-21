@@ -38,7 +38,7 @@ func qodanaSeverityToAnnotationLevel(severity string) model.AnnotationLevel {
 	}
 }
 
-func ParseQodanaAnnotations(path string) (error, []*model.Annotation) {
+func ParseQodanaAnnotations(path string) (error, []model.Annotation) {
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
 		return err, nil
@@ -50,7 +50,7 @@ func ParseQodanaAnnotations(path string) (error, []*model.Annotation) {
 		return err, nil
 	}
 
-	var result []*model.Annotation
+	result := make([]model.Annotation, 0)
 
 	for _, problem := range report.ListProblem {
 		for _, source := range problem.Sources {
@@ -65,7 +65,7 @@ func ParseQodanaAnnotations(path string) (error, []*model.Annotation) {
 				EndColumn:   source.Offset,
 			}
 
-			result = append(result, &parsedAnnotation)
+			result = append(result, parsedAnnotation)
 		}
 	}
 

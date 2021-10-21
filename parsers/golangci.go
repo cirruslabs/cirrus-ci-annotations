@@ -25,7 +25,7 @@ type GoLangCIPosition struct {
 	Column   int64
 }
 
-func ParseGoLangCIAnnotations(path string) (error, []*model.Annotation) {
+func ParseGoLangCIAnnotations(path string) (error, []model.Annotation) {
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
 		return err, nil
@@ -35,9 +35,7 @@ func ParseGoLangCIAnnotations(path string) (error, []*model.Annotation) {
 	if err != nil {
 		return err, nil
 	}
-
-	var result []*model.Annotation
-
+	result := make([]model.Annotation, 0)
 	for _, issue := range report.Issues {
 		var parsedAnnotation = model.Annotation{
 			Level:       model.LevelFailure,
@@ -48,8 +46,10 @@ func ParseGoLangCIAnnotations(path string) (error, []*model.Annotation) {
 			StartColumn: issue.Pos.Column,
 		}
 
-		result = append(result, &parsedAnnotation)
+		result = append(
+			result,
+			parsedAnnotation,
+		)
 	}
-
 	return nil, result
 }
