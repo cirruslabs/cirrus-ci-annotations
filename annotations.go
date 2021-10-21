@@ -34,8 +34,7 @@ func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 	}
 }
 
-// Makes sure that locations has validate relative to workDirPath path
-func ValidateAnnotations(workDirPath string, annotations []model.Annotation) ([]model.Annotation, error) {
+func NormalizeAnnotations(workDirPath string, annotations []model.Annotation) ([]model.Annotation, error) {
 	var result []model.Annotation
 
 	fileIndex := make(map[string]string)

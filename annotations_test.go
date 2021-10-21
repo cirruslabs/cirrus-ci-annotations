@@ -19,7 +19,7 @@ func TestValidateAnnotations(t *testing.T) {
 		},
 	}
 
-	processedAnnotations, err := annotations.ValidateAnnotations("testdata", rawAnnotations)
+	processedAnnotations, err := annotations.NormalizeAnnotations("testdata", rawAnnotations)
 	if err != nil {
 		t.Fatal(err)
 	}
