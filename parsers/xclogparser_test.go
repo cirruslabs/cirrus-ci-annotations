@@ -9,7 +9,7 @@ import (
 )
 
 func TestXclogparser(t *testing.T) {
-	expected := []model.Annotation{
+	expected := []*model.Annotation{
 		{
 			Level:   model.LevelFailure,
 			Message: "Cannot find 'printeh' in scope",

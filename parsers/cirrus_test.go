@@ -14,7 +14,7 @@ func TestParseCirrusAnnotations(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	expected := []model.Annotation{
+	expected := []*model.Annotation{
 		{
 			Level:       model.LevelFailure,
 			Message:     "some message",

@@ -10,7 +10,7 @@ import (
 // Test_RuboCop_DocsExample ensures that JSON example from the documentation[1] is parsed properly.
 // [1]: https://github.com/rubocop-hq/rubocop/blob/master/docs/modules/ROOT/pages/formatters.adoc#json-formatter
 func Test_RuboCop_DocsExample(t *testing.T) {
-	var expectedAnnotations = []model.Annotation{
+	var expectedAnnotations = []*model.Annotation{
 		{
 			Level:       model.LevelNotice,
 			Message:     "LineLength: Line is too long. [81/80]",

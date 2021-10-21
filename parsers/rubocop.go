@@ -45,7 +45,7 @@ type rubocopReport struct {
 // ranged from 0.53.0[1] to 0.87.1[2].
 // [1]: https://github.com/rubocop-hq/rubocop/blob/v0.53.0/manual/formatters.md#json-formatter
 // [2]: https://github.com/rubocop-hq/rubocop/blob/v0.87.1/docs/modules/ROOT/pages/formatters.adoc#json-formatter
-func ParseRuboCopAnnotations(path string) (error, []model.Annotation) {
+func ParseRuboCopAnnotations(path string) (error, []*model.Annotation) {
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
 		return err, nil
@@ -57,7 +57,7 @@ func ParseRuboCopAnnotations(path string) (error, []model.Annotation) {
 		return err, nil
 	}
 
-	result := make([]model.Annotation, 0)
+	var result []*model.Annotation
 
 	for _, file := range report.Files {
 		for _, offense := range file.Offenses {
@@ -83,7 +83,7 @@ func ParseRuboCopAnnotations(path string) (error, []model.Annotation) {
 				EndColumn:   offense.Location.Column,
 			}
 
-			result = append(result, parsedAnnotation)
+			result = append(result, &parsedAnnotation)
 		}
 	}
 

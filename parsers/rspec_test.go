@@ -32,7 +32,7 @@ import (
 //   end
 // end
 func Test_RSpec_MultipleStates(t *testing.T) {
-	var expectedAnnotations = []model.Annotation{
+	var expectedAnnotations = []*model.Annotation{
 		{
 			Level:      model.LevelNotice,
 			Message:    "Dummy gets skipped",

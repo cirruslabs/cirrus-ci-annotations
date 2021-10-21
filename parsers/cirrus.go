@@ -6,14 +6,14 @@ import (
 	"os"
 )
 
-func ParseCirrusAnnotations(path string) (error, []model.Annotation) {
+func ParseCirrusAnnotations(path string) (error, []*model.Annotation) {
 	reportFile, err := os.Open(path)
 	if err != nil {
 		return err, nil
 	}
 	defer reportFile.Close()
 
-	var annotations []model.Annotation
+	var annotations []*model.Annotation
 
 	decoder := json.NewDecoder(reportFile)
 
@@ -24,7 +24,7 @@ func ParseCirrusAnnotations(path string) (error, []model.Annotation) {
 			return err, nil
 		}
 
-		annotations = append(annotations, annotation)
+		annotations = append(annotations, &annotation)
 	}
 
 	return nil, annotations
