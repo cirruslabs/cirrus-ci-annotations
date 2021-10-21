@@ -35,7 +35,9 @@ func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 }
 
 // Makes sure that locations has validate relative to workDirPath path
-func ValidateAnnotations(workDirPath string, annotations []model.Annotation) error {
+func ValidateAnnotations(workDirPath string, annotations []model.Annotation) ([]model.Annotation, error) {
+	var result []model.Annotation
+
 	fileIndex := make(map[string]string)
 	err := filepath.Walk(workDirPath, func(path string, info os.FileInfo, err error) error {
 		if info != nil && !info.IsDir() {
@@ -45,7 +47,7 @@ func ValidateAnnotations(workDirPath string, annotations []model.Annotation) err
 	})
 
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	for _, annotation := range annotations {
@@ -59,6 +61,9 @@ func ValidateAnnotations(workDirPath string, annotations []model.Annotation) err
 		if path != "" {
 			annotation.Path = path
 		}
+
+		result = append(result, annotation)
 	}
-	return nil
+
+	return result, nil
 }
