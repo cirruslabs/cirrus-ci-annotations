@@ -13,6 +13,8 @@ func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 	switch strings.ToLower(format) {
 	case "junit":
 		return parsers.ParseJUnitAnnotations(path)
+	case "eslint":
+		return parsers.ParseESLintAnnotations(path)
 	case "golangci":
 		return parsers.ParseGoLangCIAnnotations(path)
 	case "android-lint":
