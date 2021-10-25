@@ -17,6 +17,7 @@ This module helps Cirrus CI to parse artifacts and find relative annotations to 
 * Swift
   * [XCLogParser](https://github.com/spotify/XCLogParser)
 * [JetBrains Qodana](https://github.com/JetBrains/Qodana)
+* [ESLint](https://eslint.org/)
 
 [Create an issue](https://github.com/cirruslabs/cirrus-ci-annotations/issues/new) to request support for other formats.
 
