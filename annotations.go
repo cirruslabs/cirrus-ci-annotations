@@ -31,6 +31,8 @@ func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 		return parsers.ParseFlutterAnnotations(path)
 	case "cirrus":
 		return parsers.ParseCirrusAnnotations(path)
+	case "boost":
+		return parsers.ParseBoostAnnotations(path)
 	default:
 		return nil, make([]model.Annotation, 0)
 	}

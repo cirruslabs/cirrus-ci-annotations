@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<TestLog>
+    <TestSuite name="Test Suite">
+        <TestSuite name="boost_tests" file="test/boost_tests.cpp" line="124">
+            <TestCase name="boost_sample" file="test/boost_tests.cpp" line="126">
+                <Error file="test/boost_tests.cpp" line="130"><![CDATA[an error happened]]></Error>
+            </TestCase>
+        </TestSuite>
+        <TestSuite name="boost_tests2" file="test/boost_tests2.cpp" line="224">
+            <TestCase name="boost_sample2" file="test/boost_tests2.cpp" line="226">
+                <Error file="test/boost_tests2.cpp" line="230"><![CDATA[another error]]></Error>
+            </TestCase>
+        </TestSuite>
+    </TestSuite>
+</TestLog>
