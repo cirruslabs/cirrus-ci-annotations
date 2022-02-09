@@ -19,6 +19,7 @@ This module helps Cirrus CI to parse artifacts and find relative annotations to 
 * [JetBrains Qodana](https://github.com/JetBrains/Qodana)
 * [ESLint](https://eslint.org/)
 * [Boost](https://www.boost.org/doc/libs/1_77_0/libs/test/doc/html/boost_test/test_output/log_formats/log_xml_format.html)
+* [Buf Lint](https://docs.buf.build/lint/usage)
 
 [Create an issue](https://github.com/cirruslabs/cirrus-ci-annotations/issues/new) to request support for other formats.
 
