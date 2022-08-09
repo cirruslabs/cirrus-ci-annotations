@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="LibraryTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2019-04-11T21:49:31" hostname="cirrus-ci-task-5738961715593216-rxq9f" time="0.004">
   <properties/>
   <testcase name="testSomeLibraryMethod" classname="LibraryTest" time="0.004">

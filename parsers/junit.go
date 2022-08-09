@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/cirruslabs/cirrus-ci-annotations/model"
 	"github.com/cirruslabs/cirrus-ci-annotations/util"
-	"github.com/cirruslabs/go-junit"
+	"github.com/joshdk/go-junit"
 	"strconv"
 )
 
