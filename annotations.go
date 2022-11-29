@@ -35,6 +35,8 @@ func ParseAnnotations(format string, path string) (error, []model.Annotation) {
 		return parsers.ParseBoostAnnotations(path)
 	case "buf":
 		return parsers.ParseBufAnnotations(path)
+	case "swiftformat":
+		return parsers.ParseSwiftFormatAnnotations(path)
 	default:
 		return nil, make([]model.Annotation, 0)
 	}

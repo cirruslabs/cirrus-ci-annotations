@@ -1,0 +1,14 @@
+[
+  {
+    "file" : "/tmp/working-directory/tart/Sources/tart/Prunable.swift",
+    "line" : 4,
+    "reason" : "Indent code in accordance with the scope level.",
+    "rule_id" : "indent"
+  },
+  {
+    "file" : "/tmp/working-directory/tart/Passphrase/Words.swift",
+    "line" : 2052,
+    "reason" : "Align wrapped function arguments or collection elements.",
+    "rule_id" : "wrapArguments"
+  }
+]
