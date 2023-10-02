@@ -4,6 +4,7 @@ import (
 	"github.com/cirruslabs/cirrus-ci-annotations/model"
 	"github.com/cirruslabs/cirrus-ci-annotations/parsers"
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 	"path/filepath"
 	"testing"
 )
@@ -57,4 +58,16 @@ func TestFlutterFailing(t *testing.T) {
 	}
 
 	assert.Equal(t, expected, actual)
+}
+
+// TestFlutterArrays makes sure that we ignore the events that Flutter
+// started providing in the --machine output recently.
+//
+// https://github.com/cirruslabs/cirrus-ci-docs/issues/1245
+func TestFlutterArrays(t *testing.T) {
+	err, _ := parsers.ParseFlutterAnnotations(filepath.Join("..", "testdata", "json", "flutter-arrays.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	require.NoError(t, err)
 }
