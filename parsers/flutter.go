@@ -46,13 +46,26 @@ func ParseFlutterAnnotations(path string) (error, []model.Annotation) {
 	result := make([]model.Annotation, 0)
 
 	for {
-		var entry flutterEntry
+		// Get the next raw-encoded JSON value
+		var raw json.RawMessage
 
-		if err := decoder.Decode(&entry); err != nil {
+		if err := decoder.Decode(&raw); err != nil {
 			if err == io.EOF {
 				break
 			}
 
+			return err, nil
+		}
+
+		// Filter out JSON values that don't look like JSON objects
+		if len(raw) > 0 && raw[0] != '{' {
+			continue
+		}
+
+		// Parse "flutter test --machine" entry
+		var entry flutterEntry
+
+		if err := json.Unmarshal(raw, &entry); err != nil {
 			return err, nil
 		}
 
